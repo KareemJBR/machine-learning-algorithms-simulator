@@ -56,5 +56,13 @@ def k_nearest_neighbors(k: int, input_points: list, width: int, height: int) -> 
                     max_appearances = number_of_points
                     max_class = class_index
 
+            # we should check if there is another class with the same number of near pixels, if yes then we append -1,
+            # which means that the algorithm cannot decide what class should the pixel assigned to
+
+            for class_index, number_of_points in classes_counter.items():
+                if number_of_points == max_class:
+                    max_class = -1
+                    break
+
             results.append(max_class)
     return results
