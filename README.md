@@ -6,6 +6,9 @@ Name: Kareem Jabareen
 Student Number: 211406343
 
 
+Name: Zaher Zoubi
+
+Student Number: 315802686
 
 ## Project Description
 
