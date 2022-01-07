@@ -2,27 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9775237-8162-4f92-aa4f-70e92417391c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/mysite/mysite/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/static/dfs_home.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/static/home.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/static/kmeans_home.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/static/knn_home.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/static/lda_home.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/static/mle_home.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/static/naive_bayes_home.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/static/pca_home.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/static/svm_home.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/templates/dfs_home.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/templates/home.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/templates/kmeans_home.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/templates/knn_home.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/templates/lda_home.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/templates/mle_home.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/templates/naive_bayes_home.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/templates/pca_home.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/templates/svm_home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/mysite/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/mysite/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/mysite/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/mysite/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/mysite/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/mysite/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/static/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/static/home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/templates/home.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,6 +52,7 @@
       <updated>1641495210393</updated>
       <workItem from="1641495213524" duration="670000" />
       <workItem from="1641564847851" duration="1733000" />
+      <workItem from="1641581131304" duration="2150000" />
     </task>
     <servers />
   </component>

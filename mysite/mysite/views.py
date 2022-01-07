@@ -34,4 +34,4 @@ def pca_home(request):
 
 
 def svm_home(request):
-    return render(request, 'svm_home')
+    return render(request, 'svm_home.html')
