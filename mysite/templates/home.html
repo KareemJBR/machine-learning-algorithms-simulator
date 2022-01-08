@@ -7,7 +7,87 @@
     <link rel="stylesheet" href="{% static 'home.css' %}">
   </head>
   <body>
-  <h1>This is the home page</h1>
+  <h1 id="pageHeader">ML Algorithms Simulator</h1>
+
+  <div class="algorithmsSelection">
+
+    <a href="dfs">
+      <div class="card" style="width: 18rem;">
+        <img src="{% static 'dfs_image.gif' %}" class="card-img-top" alt="Error Loading Image">
+        <div class="card-body">
+          <p class="card-text">Depth First Search</p>
+        </div>
+      </div>
+    </a>
+
+    <a href="kmeans">
+      <div class="card" style="width: 18rem;">
+        <img src="{% static 'kmeans_image.gif' %}" class="card-img-top" alt="Error Loading Image">
+        <div class="card-body">
+          <p class="card-text">K Means</p>
+        </div>
+      </div>
+    </a>
+
+    <a href="knn">
+      <div class="card" style="width: 18rem;">
+        <img src="{% static 'knn_image.png' %}" class="card-img-top" alt="Error Loading Image">
+        <div class="card-body">
+          <p class="card-text">K Nearest Neighbors</p>
+        </div>
+      </div>
+    </a>
+
+    <a href="lda">
+      <div class="card" style="width: 18rem;">
+        <img src="{% static 'lda_image.jpg' %}" class="card-img-top" alt="Error Loading Image">
+        <div class="card-body">
+          <p class="card-text">Linear Discriminant Analysis</p>
+        </div>
+      </div>
+    </a>
+
+  </div>
+
+  <div class="algorithmsSelection">
+
+    <a href="mle">
+      <div class="card" style="width: 18rem;">
+        <img src="{% static 'mle_image.png' %}" class="card-img-top" alt="Error Loading Image">
+        <div class="card-body">
+          <p class="card-text">Maximum Likelihood Estimation</p>
+        </div>
+      </div>
+    </a>
+
+    <a href="naive_bayes">
+      <div class="card" style="width: 18rem;">
+        <img src="{% static 'naive_bayes_image.png' %}" class="card-img-top" alt="Error Loading Image">
+        <div class="card-body">
+          <p class="card-text">Naive Bayes Classifier</p>
+        </div>
+      </div>
+    </a>
+
+    <a href="pca">
+      <div class="card" style="width: 18rem;">
+        <img src="{% static 'pca_image.png' %}" class="card-img-top" alt="Error Loading Image">
+        <div class="card-body">
+          <p class="card-text">Principal Components Analysis</p>
+        </div>
+      </div>
+    </a>
+
+    <a href="svm">
+      <div class="card" style="width: 18rem;">
+        <img src="{% static 'svm_image.png' %}" class="card-img-top" alt="Error Loading Image">
+        <div class="card-body">
+          <p class="card-text">Support vector machines</p>
+        </div>
+      </div>
+    </a>
+
+  </div>
 
   </body>
 </html>
