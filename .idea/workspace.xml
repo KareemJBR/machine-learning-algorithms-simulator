@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9775237-8162-4f92-aa4f-70e92417391c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/mysite/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/mysite/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/mysite/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/mysite/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/mysite/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/mysite/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/static/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/static/home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/mysite/k_means_algo.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/mysite/k_means_algo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/mysite/linear_discriminant_analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/mysite/linear_discriminant_analysis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/mysite/maximum_likelihood_estimation.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/mysite/maximum_likelihood_estimation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/mysite/principal_component_analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/mysite/principal_component_analysis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/mysite/svm_algo.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/mysite/svm_algo.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/templates/home.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -53,6 +55,7 @@
       <workItem from="1641495213524" duration="670000" />
       <workItem from="1641564847851" duration="1733000" />
       <workItem from="1641581131304" duration="2150000" />
+      <workItem from="1641657376980" duration="336000" />
     </task>
     <servers />
   </component>
