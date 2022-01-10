@@ -1,4 +1,12 @@
 body {
-    background-color: #CCE3E6;
+    background-color: #EEE;
     font-family: Georgia, serif;
+}
+
+h1 {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
