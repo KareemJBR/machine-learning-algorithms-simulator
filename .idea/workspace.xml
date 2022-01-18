@@ -2,18 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9775237-8162-4f92-aa4f-70e92417391c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/mysite/static/dfs_home.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/static/kmeans_home.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/static/knn_home.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/static/lda_home.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/static/mle_home.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/static/naive_bayes_home.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/static/pca_home.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/static/svm_home.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mysite/static/github_icon.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/static/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/static/home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/static/knn_home.js" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/static/knn_home.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/templates/pca_home.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/templates/pca_home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/templates/svm_home.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/templates/svm_home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/templates/knn_home.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/templates/knn_home.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,11 +38,13 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -64,6 +60,11 @@
       <workItem from="1641581131304" duration="2150000" />
       <workItem from="1641657376980" duration="336000" />
       <workItem from="1642093245482" duration="269000" />
+      <workItem from="1642202256004" duration="1324000" />
+      <workItem from="1642205210025" duration="624000" />
+      <workItem from="1642460706961" duration="859000" />
+      <workItem from="1642511540409" duration="66000" />
+      <workItem from="1642517970580" duration="854000" />
     </task>
     <servers />
   </component>
@@ -80,5 +81,8 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

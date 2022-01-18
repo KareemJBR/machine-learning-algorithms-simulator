@@ -7,7 +7,42 @@
     <link rel="stylesheet" href="{% static 'knn_home.css' %}">
     <link rel="icon" href="{% static 'machine_learning_icon.png' %}">
   </head>
+  <style>
+    canvas {
+      cursor: pointer;
+    }
+    .instructions {
+      font-size: 14pt;
+    }
+  </style>
   <body>
+  <div class='container-fluid'>
     <h1>K Nearest Neighbors (KNN)</h1>
+
+    <div class="row">
+      <div class="col-xs-4 col-xs-offset-4 instructions">
+        This interactive demo lets you explore the K-Nearest Neighbors algorithm for
+        classification.
+
+        <p>
+          Each point in the plane is colored with the class that would be assigned to it using
+          the K-Nearest Neighbors algorithm. Points for which the K-Nearest Neighbor algorithm
+          results in a tie are colored white.
+        </p>
+
+        <p>
+          You can move points around by clicking and dragging!
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 text-center">
+        <canvas id="canvas"></canvas>
+      </div>
+    </div>
+
+
+  </div>
   </body>
 </html>
