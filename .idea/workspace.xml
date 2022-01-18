@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9775237-8162-4f92-aa4f-70e92417391c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/mysite/static/github_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mysite/mysite/dfs_objects.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/static/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/static/home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/static/knn_home.js" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/static/knn_home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/templates/knn_home.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/templates/knn_home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/mysite/dfs_algo.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/mysite/dfs_algo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/mysite/naive_bayes_classifier_algo.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/mysite/naive_bayes_classifier_algo.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,9 +16,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -64,7 +63,8 @@
       <workItem from="1642205210025" duration="624000" />
       <workItem from="1642460706961" duration="859000" />
       <workItem from="1642511540409" duration="66000" />
-      <workItem from="1642517970580" duration="854000" />
+      <workItem from="1642517970580" duration="1679000" />
+      <workItem from="1642522049990" duration="2193000" />
     </task>
     <servers />
   </component>
