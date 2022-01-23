@@ -1,68 +1,56 @@
 from numpy import sqrt
 
 
-def distance_sort(point_distance: tuple) -> float:
-    """Used in sorting a list of tuples"""
-    return point_distance[0]
-
-
-def k_nearest_neighbors(k: int, input_points: list, width: int, height: int) -> list:
+def k_nearest_neighbors(k, input_points, input_points_class, output_points):
     """
 
-    :param k: The k parameter in the algorithm k-nearest-neighbors
-    :param input_points: The points in the training data, each point has two coordinates, x and y. In addition,
-    it has the id of the class it is in
-    :param width: The width of the output window
-    :param height: The height of the output window
-    :return: A list of ints of the size width * height indicating the classes the algorithm decides for the pixels in
-    the output window
+        :param k: The k parameter in the algorithm k-nearest-neighbors
+        :param input_points: The points in the training data, each point has two coordinates, x and y. In addition,
+        it has the id of the class it is in
+        :param input_points_class: The input points' classification vector
+        :param output_points: A vector containing the test data.
+        :return: A list of the same length of the test data indicating the classes the algorithm decides for the points
+        in `output_points` in the output window
 
     """
 
     results = []
+    if len(input_points) == 0:
+        raise ValueError("Invalid training data.")
 
-    for x_coordinate in range(width):
-        for y_coordinate in range(height):
+    d = len(input_points[0])
+    for test_point in output_points:
+        distances = []
 
-            distance_list = []  # list of tuples where each tuple contains the distance from an input point and its
-            # class
-            for input_point in input_points:
-                train_x = input_point[0]
-                train_y = input_point[1]
-                train_class = input_point[2]
+        for i in range(len(input_points)):
+            distance = 0
+            for feature in range(d):
+                distance += pow(input_points[i][feature] - test_point[feature], 2)
+            distances.append((sqrt(distance), input_points_class[i]))
 
-                distance = sqrt(pow(train_x - x_coordinate, 2) + pow(train_y + y_coordinate, 2))
-                distance_list.append((distance, train_class))
+        distances.sort(key=lambda x: x[0])
 
-            # we shall now find the classes of the k nearest neighbors
+        k_closest = []
+        for i in range(k):
+            k_closest.append(distances[i][1])
 
-            distance_list.sort(key=distance_sort)
+        for i in range(k, len(distances)):
+            if distances[i][0] == k_closest[k - 1]:
+                k_closest.append(distances[i][1])
 
-            classes_counter = {}
+        most_common = None
+        times_appeared = 0
 
-            for i in range(k):
-                train_class = distance_list[i][1]
+        for i in range(len(k_closest)):
+            temp = k_closest.count(k_closest[i])
+            if temp > times_appeared:
+                most_common = k_closest[i]
+                times_appeared = temp
 
-                if train_class in classes_counter.keys():
-                    classes_counter[train_class] += 1
-                else:
-                    classes_counter[train_class] = 1
+        for i in range(len(k_closest)):
+            if most_common != k_closest[i] and times_appeared == k_closest.count(k_closest[i]):     # the algorithm
+                #   cannot decide which class is the right one
+                most_common = None
+                break
 
-            max_class = 0
-            max_appearances = 0
-
-            for class_index, number_of_points in classes_counter.items():
-                if number_of_points > max_appearances:
-                    max_appearances = number_of_points
-                    max_class = class_index
-
-            # we should check if there is another class with the same number of near pixels, if yes then we append -1,
-            # which means that the algorithm cannot decide what class should the pixel assigned to
-
-            for class_index, number_of_points in classes_counter.items():
-                if number_of_points == max_class:
-                    max_class = -1
-                    break
-
-            results.append(max_class)
-    return results
+        results.append(most_common)
