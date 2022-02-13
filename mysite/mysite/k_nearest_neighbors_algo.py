@@ -54,3 +54,5 @@ def k_nearest_neighbors(k, input_points, input_points_class, output_points):
                 break
 
         results.append(most_common)
+
+    return results
