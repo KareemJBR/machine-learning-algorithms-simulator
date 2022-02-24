@@ -4,7 +4,17 @@
     <list default="true" id="f9775237-8162-4f92-aa4f-70e92417391c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/templates/knn_home.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/templates/knn_home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/mysite/dfs_algo.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/mysite/dfs_objects.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/mysite/k_means_algo.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/mysite/k_nearest_neighbors_algo.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/mysite/linear_discriminant_analysis.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/mysite/maximum_likelihood_estimation.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/mysite/naive_bayes_classifier_algo.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/mysite/principal_component_analysis.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/mysite/svm_algo.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/mysite/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/mysite/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/mysite/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/mysite/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +32,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -78,6 +96,7 @@
       <workItem from="1643200058589" duration="24000" />
       <workItem from="1645372762381" duration="441000" />
       <workItem from="1645373226097" duration="32000" />
+      <workItem from="1645663098632" duration="3245000" />
     </task>
     <servers />
   </component>
