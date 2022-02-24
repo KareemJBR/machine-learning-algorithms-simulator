@@ -124,6 +124,7 @@ def kmeans(x, k, no_of_iterations):
 
 
 def pca(data):  # PCA is an unsupervised algorithm, thus we do not have test/train data
+
     #   we shall subtract the mean first
     means = []
 
