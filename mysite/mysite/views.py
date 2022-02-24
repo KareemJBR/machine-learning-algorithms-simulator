@@ -123,14 +123,6 @@ def kmeans(x, k, no_of_iterations):
     return points
 
 
-def lda():
-    pass
-
-
-def mle():
-    pass
-
-
 def pca(data):  # PCA is an unsupervised algorithm, thus we do not have test/train data
     #   we shall subtract the mean first
     means = []
@@ -166,11 +158,8 @@ def pca(data):  # PCA is an unsupervised algorithm, thus we do not have test/tra
     return final_result
 
 
-def svm():
-    pass
-
-
 class NaiveBayes:
+
     def __init__(self, x, y):
         self.y = y
         self.classes_mean = {}
@@ -211,3 +200,19 @@ class NaiveBayes:
         )
         probs = 0.5 * np.sum(np.power(x - mean, 2) / (sigma + self.eps), 1)
         return const - probs
+
+
+def dfs():
+    pass
+
+
+def lda():
+    pass
+
+
+def mle():
+    pass
+
+
+def svm():
+    pass
