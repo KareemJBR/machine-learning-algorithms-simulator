@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9775237-8162-4f92-aa4f-70e92417391c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/mysite/dfs_algo.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/mysite/dfs_objects.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/mysite/k_means_algo.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/mysite/k_nearest_neighbors_algo.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/mysite/linear_discriminant_analysis.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/mysite/maximum_likelihood_estimation.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/mysite/naive_bayes_classifier_algo.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/mysite/principal_component_analysis.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/mysite/svm_algo.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/mysite/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/mysite/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/mysite/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/mysite/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -96,7 +85,7 @@
       <workItem from="1643200058589" duration="24000" />
       <workItem from="1645372762381" duration="441000" />
       <workItem from="1645373226097" duration="32000" />
-      <workItem from="1645663098632" duration="3245000" />
+      <workItem from="1645663098632" duration="6276000" />
     </task>
     <servers />
   </component>

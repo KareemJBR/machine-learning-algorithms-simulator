@@ -1,8 +1,6 @@
 from django.shortcuts import render
-from django.http import HttpResponse
-
+from scipy.spatial.distance import cdist
 import numpy as np
-import matplotlib.pyplot as plt
 
 
 def home(request):
@@ -98,8 +96,31 @@ def k_nearest_neighbors(k, train_data, input_points_class, test_data):
     return results
 
 
-def k_means():
-    pass
+def kmeans(x, k, no_of_iterations):
+    idx = np.random.choice(len(x), k, replace=False)
+    # first we need to choose random centroids
+    centroids = x[idx, :]
+
+    # finding the distance between centroids and all the data points
+    distances = cdist(x, centroids, 'euclidean')
+
+    # centroid with the minimum Distance
+    points = np.array([np.argmin(i) for i in distances])
+
+    # repeating the above steps for a defined number of iterations
+    for _ in range(no_of_iterations):
+        centroids = []
+        for idx in range(k):
+            # updating centroids by taking mean of cluster it belongs to
+            temp_cent = x[points == idx].mean(axis=0)
+            centroids.append(temp_cent)
+
+        centroids = np.vstack(centroids)
+
+        distances = cdist(x, centroids, 'euclidean')
+        points = np.array([np.argmin(i) for i in distances])
+
+    return points
 
 
 def lda():
@@ -110,29 +131,15 @@ def mle():
     pass
 
 
-def naive_bayes_classifier(num_of_classes, train_data, input_points_class, test_data):
-    results = []
-
-
-
-    i = -1
-    for point in train_data:
-        i += 1
-        #   if input_points_class[i] ==
-
-
-    return results
-
-
 def pca(data):  # PCA is an unsupervised algorithm, thus we do not have test/train data
     #   we shall subtract the mean first
     means = []
 
     for dimension in range(len(data[0])):
-        sum = 0
+        sum_ = 0
         for point in data:
-            sum += point[dimension]
-        means.append(sum/len(data))
+            sum_ += point[dimension]
+        means.append(sum_/len(data))
 
     for i in range(len(data)):
         for j in range(len(data[0])):
@@ -148,7 +155,6 @@ def pca(data):  # PCA is an unsupervised algorithm, thus we do not have test/tra
 
     # sort the eigenvalues in descending order
     sorted_index = np.argsort(eigen_values)[::-1]
-    sorted_eigenvalue = eigen_values[sorted_index]
 
     #   sorting the eigenvectors in a similar way
     sorted_eigenvectors = eigen_vectors[:, sorted_index]
@@ -163,3 +169,45 @@ def pca(data):  # PCA is an unsupervised algorithm, thus we do not have test/tra
 def svm():
     pass
 
+
+class NaiveBayes:
+    def __init__(self, x, y):
+        self.y = y
+        self.classes_mean = {}
+        self.classes_variance = {}
+        self.classes_prior = {}
+        self.num_examples, self.num_features = x.shape
+        self.num_classes = len(np.unique(y))
+        self.eps = 1e-6
+
+    def fit(self, x):
+        self.classes_mean = {}
+        self.classes_variance = {}
+        self.classes_prior = {}
+
+        for c in range(self.num_classes):
+            x_c = x[self.y == c]
+
+            self.classes_mean[str(c)] = np.mean(x_c, axis=0)
+            self.classes_variance[str(c)] = np.var(x_c, axis=0)
+            self.classes_prior[str(c)] = x_c.shape[0] / x.shape[0]
+
+    def predict(self, x):
+        probs = np.zeros((self.num_examples, self.num_classes))
+
+        for c in range(self.num_classes):
+            prior = self.classes_prior[str(c)]
+            probs_c = self.density_function(
+                x, self.classes_mean[str(c)], self.classes_variance[str(c)]
+            )
+            probs[:, c] = probs_c + np.log(prior)
+
+        return np.argmax(probs, 1)
+
+    def density_function(self, x, mean, sigma):
+        # Calculate probability from Gaussian density function
+        const = -self.num_features / 2 * np.log(2 * np.pi) - 0.5 * np.sum(
+            np.log(sigma + self.eps)
+        )
+        probs = 0.5 * np.sum(np.power(x - mean, 2) / (sigma + self.eps), 1)
+        return const - probs
