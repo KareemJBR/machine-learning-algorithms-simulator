@@ -2,10 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9775237-8162-4f92-aa4f-70e92417391c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/mysite/k_means.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/mysite/k_means.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/mysite/k_nearest_neighbors.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/mysite/k_nearest_neighbors.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/mysite/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/mysite/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/templates/dfs_home.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/templates/dfs_home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/templates/kmeans_home.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/templates/kmeans_home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/templates/knn_home.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/templates/knn_home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/templates/lda_home.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/templates/lda_home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/templates/mle_home.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/templates/mle_home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/templates/naive_bayes_home.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/templates/naive_bayes_home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/templates/pca_home.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/templates/pca_home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/templates/svm_home.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/templates/svm_home.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +96,8 @@
       <workItem from="1645663098632" duration="8004000" />
       <workItem from="1645711402211" duration="2906000" />
       <workItem from="1645746195387" duration="2066000" />
-      <workItem from="1645752380783" duration="5344000" />
+      <workItem from="1645752380783" duration="5632000" />
+      <workItem from="1645816930549" duration="259000" />
     </task>
     <servers />
   </component>
