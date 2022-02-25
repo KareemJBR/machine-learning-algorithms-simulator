@@ -35,10 +35,12 @@ def knn_home(request):
 
 def lda_home(request):
     lda = LDA(request['n_components'])
-
+    lda.fit(request['x'], request['y'])
+    request['results'] = lda.linear_discriminants
     return render(request, 'lda_home.html')
 
 
+#   TODO: Implement MLE in maximum_likelihood_estimation.py file
 def mle_home(request):
     mle = MLE()
     return render(request, 'mle_home.html')
