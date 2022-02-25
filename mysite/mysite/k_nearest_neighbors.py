@@ -1,4 +1,5 @@
-from help_functions import *
+import numpy as np
+from . import help_functions
 from collections import Counter     # TODO: might need to implement it myself
 
 
@@ -17,7 +18,7 @@ class KNN:
 
     def _predict(self, x):
         # compute distances between x and all examples in the training set
-        distances = [euclidean_distance(x, x_train) for x_train in self.x_train]
+        distances = [help_functions.euclidean_distance(x, x_train) for x_train in self.x_train]
         # sort by distance and return indices of the first k neighbors
         k_idx = np.argsort(distances)[: self.k]
         # extract the labels of the k nearest neighbor training samples
