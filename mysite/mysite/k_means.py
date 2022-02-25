@@ -42,7 +42,7 @@ class KMeans:
             if self.plot_steps:
                 self.plot()
 
-        # Classify samples as the index of their clusters
+        # classify samples as the index of their clusters
         return self._get_cluster_labels(self.clusters)
 
     def _get_cluster_labels(self, clusters):
@@ -55,7 +55,7 @@ class KMeans:
         return labels
 
     def _create_clusters(self, centroids):
-        # Assign the samples to the closest centroids to create clusters
+        # assign the samples to the closest centroids to create clusters
         clusters = [[] for _ in range(self.K)]
         for idx, sample in enumerate(self.x):
             centroid_idx = self._closest_centroid(sample, centroids)

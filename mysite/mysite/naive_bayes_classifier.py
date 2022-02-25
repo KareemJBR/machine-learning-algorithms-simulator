@@ -36,7 +36,7 @@ class NaiveBayes:
         return np.argmax(probs, 1)
 
     def density_function(self, x, mean, sigma):
-        # Calculate probability from Gaussian density function
+        # calculate probability from Gaussian density function
         const = -self.num_features / 2 * np.log(2 * np.pi) - 0.5 * np.sum(
             np.log(sigma + self.eps)
         )

@@ -16,11 +16,11 @@ class KNN:
         return np.array(y_pred)
 
     def _predict(self, x):
-        # Compute distances between x and all examples in the training set
+        # compute distances between x and all examples in the training set
         distances = [euclidean_distance(x, x_train) for x_train in self.x_train]
-        # Sort by distance and return indices of the first k neighbors
+        # sort by distance and return indices of the first k neighbors
         k_idx = np.argsort(distances)[: self.k]
-        # Extract the labels of the k nearest neighbor training samples
+        # extract the labels of the k nearest neighbor training samples
         k_neighbor_labels = [self.y_train[i] for i in k_idx]
         # return the most common class label
         most_common = Counter(k_neighbor_labels).most_common(1)
