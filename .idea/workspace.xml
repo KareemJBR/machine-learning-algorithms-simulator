@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f9775237-8162-4f92-aa4f-70e92417391c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/mysite/support_vectors_machines.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/mysite/support_vectors_machines.py" afterDir="false" />
-    </list>
+    <list default="true" id="f9775237-8162-4f92-aa4f-70e92417391c" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -87,6 +84,7 @@
       <workItem from="1645373226097" duration="32000" />
       <workItem from="1645663098632" duration="8004000" />
       <workItem from="1645711402211" duration="2906000" />
+      <workItem from="1645746195387" duration="599000" />
     </task>
     <servers />
   </component>
