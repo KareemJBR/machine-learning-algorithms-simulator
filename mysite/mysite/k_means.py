@@ -15,7 +15,7 @@ class KMeans:
         self.x = None
         self.n_samples, self.n_features = 0, 0
 
-    def predict(self, x):
+    def predict(self, x):   # TODO: consider plotting steps
         self.x = x
         self.n_samples, self.n_features = x.shape
 
