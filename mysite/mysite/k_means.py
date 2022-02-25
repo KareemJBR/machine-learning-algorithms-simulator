@@ -28,9 +28,6 @@ class KMeans:
             # assign samples to the closest centroids (create clusters)
             self.clusters = self._create_clusters(self.centroids)
 
-            if self.plot_steps:
-                self.plot()
-
             # Calculate new centroids from the clusters
             centroids_old = self.centroids
             self.centroids = self._get_centroids(self.clusters)
@@ -38,9 +35,6 @@ class KMeans:
             # check if clusters have changed
             if self._is_converged(centroids_old, self.centroids):
                 break
-
-            if self.plot_steps:
-                self.plot()
 
         # classify samples as the index of their clusters
         return self._get_cluster_labels(self.clusters)
@@ -82,16 +76,3 @@ class KMeans:
             euclidean_distance(centroids_old[i], centroids[i]) for i in range(self.K)
         ]
         return sum(distances) == 0
-
-    # TODO: should rebuild plot method to make it send the plot to the web instead of showing it on local machine
-    def plot(self):
-        fig, ax = plt.subplots(figsize=(12, 8))
-
-        for i, index in enumerate(self.clusters):
-            point = self.x[index].T
-            ax.scatter(*point)
-
-        for point in self.centroids:
-            ax.scatter(*point, marker="x", color="black", linewidth=2)
-
-        plt.show()
