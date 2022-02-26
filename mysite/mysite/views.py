@@ -10,7 +10,7 @@ def home(request):
 
 def dfs_home(request):
     visited_nodes_id = []
-    
+    #   TODO: we shall build the Node and Edge objects then call DFS function
     return render(request, 'dfs_home.html')
 
 
