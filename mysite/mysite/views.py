@@ -9,7 +9,7 @@ def home(request):
 
 
 def dfs_home(request):
-    # TODO: process data received from js file by creating Node objects
+    visited_nodes_id = []
     
     return render(request, 'dfs_home.html')
 
