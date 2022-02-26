@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9775237-8162-4f92-aa4f-70e92417391c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/mysite/mysite/depth_first_search.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/mysite/depth_first_search.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/mysite/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/mysite/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/static/dfs_home.js" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/static/dfs_home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/static/knn_home.js" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/static/knn_home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/templates/knn_home.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/templates/knn_home.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +53,35 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration name="views" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="machine-learning-algorithms-simulator" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/mysite/mysite" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mysite/mysite/views.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.views" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -100,7 +133,7 @@
       <workItem from="1645847593858" duration="919000" />
       <workItem from="1645848833049" duration="415000" />
       <workItem from="1645889328436" duration="1975000" />
-      <workItem from="1645903081324" duration="12000" />
+      <workItem from="1645903081324" duration="2646000" />
     </task>
     <servers />
   </component>
@@ -120,5 +153,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/depth_first_search_py$views.coverage" NAME="views Coverage Results" MODIFIED="1645907530162" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mysite/mysite" />
   </component>
 </project>
