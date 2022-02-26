@@ -14,14 +14,6 @@ class Node:
         self.out_edges = out_edges
 
 
-# class Graph:
-#
-#     def __init__(self, head_id: int, nodes: list, edges: list):
-#         self.head_id = head_id
-#         self.edges = edges
-#         self.nodes = nodes
-#
-
 def dfs(visited_nodes, node):
     if node.node_id not in visited_nodes:
         visited_nodes.append(node)
