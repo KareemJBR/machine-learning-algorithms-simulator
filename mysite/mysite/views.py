@@ -10,6 +10,7 @@ def home(request):
 
 def dfs_home(request):
     # TODO: process data received from js file by creating Node objects
+    
     return render(request, 'dfs_home.html')
 
 
