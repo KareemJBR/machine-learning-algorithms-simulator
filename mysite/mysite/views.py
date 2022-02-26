@@ -37,7 +37,8 @@ def lda_home(request):
 
 #   TODO: Implement MLE in maximum_likelihood_estimation.py file
 def mle_home(request):
-    mle = maximum_likelihood_estimation.MLE()
+    mle = maximum_likelihood_estimation.MLClassifier()
+
     return render(request, 'mle_home.html')
 
 
