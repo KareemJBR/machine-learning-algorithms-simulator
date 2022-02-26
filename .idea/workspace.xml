@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9775237-8162-4f92-aa4f-70e92417391c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/mysite/maximum_likelihood_estimation.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/mysite/maximum_likelihood_estimation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/mysite/depth_first_search.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/mysite/depth_first_search.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/mysite/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/mysite/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -101,6 +99,7 @@
       <workItem from="1645832375143" duration="10000" />
       <workItem from="1645832403014" duration="40000" />
       <workItem from="1645847593858" duration="919000" />
+      <workItem from="1645848833049" duration="359000" />
     </task>
     <servers />
   </component>

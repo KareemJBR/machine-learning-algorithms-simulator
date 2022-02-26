@@ -9,9 +9,7 @@ def home(request):
 
 
 def dfs_home(request):
-    visited_nodes, graph, current_node = [], request['graph'], request['current_node']
-    depth_first_search.dfs(visited_nodes, graph, current_node)
-    request['visited_nodes'] = visited_nodes
+    # TODO: process data received from js file by creating Node objects
     return render(request, 'dfs_home.html')
 
 
