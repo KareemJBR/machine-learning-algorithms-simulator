@@ -30,8 +30,8 @@ def knn_home(request):
     if request.method == "POST":
         output = request.get_json()
         output_dict = json.loads(output)   # now the data is stored in a python dictionary
-        test_x = [x for x in output_dict['width']]
-        test_y = [x for x in output_dict['height']]
+        test_x = [x for x in range(output_dict['width'])]
+        test_y = [x for x in range(output_dict['height'])]
         test_points = np.asarray(list(np.asarray(zip(test_x, test_y))))
 
         train_x = [x for x in output_dict['train_x']]
