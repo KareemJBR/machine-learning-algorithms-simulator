@@ -52,7 +52,6 @@ function submit_to_server(){
         train_y,
         train_classes,
         k,
-        num_of_classes,
         window_width,
         window_height
     }

@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9775237-8162-4f92-aa4f-70e92417391c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/mysite/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/mysite/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/static/dfs_home.js" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/static/dfs_home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/static/knn_home.css" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/static/knn_home.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/static/knn_home.js" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/static/knn_home.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/templates/knn_home.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/templates/knn_home.html" afterDir="false" />
     </list>
@@ -134,6 +135,7 @@
       <workItem from="1645848833049" duration="415000" />
       <workItem from="1645889328436" duration="1975000" />
       <workItem from="1645903081324" duration="2646000" />
+      <workItem from="1646061153963" duration="2603000" />
     </task>
     <servers />
   </component>
