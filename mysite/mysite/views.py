@@ -76,6 +76,37 @@ def pca_home(request):
     if request.method == "POST":
         output = request.get_json()
         output_dict = json.loads(output)  # now the data is stored in a python dictionary
+        n_components = output_dict['n_components']      # an integer in the range [1, 3]
+
+        pca = principal_components_analysis.PCA(n_components=n_components)
+        train_x = train_y = train_z = []
+        if n_components == 1:
+            train_x = np.asarray([x for x in output_dict['train_x']])
+            pca.fit(train_x)
+            x_projected = pca.transform(train_x)
+            p1 = x_projected[:, 0]
+            return render(request, 'pca_home.html', {'p1': p1})
+
+        if n_components == 2:
+            train_x = [x for x in output_dict['train_x']]
+            train_y = [x for x in output_dict['train_y']]
+            train_data = np.asarray(list(np.asarray(zip(train_x, train_y))))
+            pca.fit(train_data)
+            x_projected = pca.transform(train_data)
+            p1 = x_projected[:, 0]
+            p2 = x_projected[:, 1]
+            return render(request, 'pca_home.html', {'p1': p1, 'p2': p2})
+
+        train_x = [x for x in output_dict['train_x']]
+        train_y = [x for x in output_dict['train_y']]
+        train_z = [x for x in output_dict['train_z']]
+        train_data = np.asarray(list(np.asarray(zip(train_x, train_y, train_z))))
+        pca.fit(train_data)
+        x_projected = pca.transform(train_data)
+        p1 = x_projected[:, 0]
+        p2 = x_projected[:, 1]
+        p3 = x_projected[:, 2]
+        return render(request, 'pca_home.html', {'p1': p1, 'p2': p2, 'p3': p3})
 
     return render(request, 'pca_home.html')
 
