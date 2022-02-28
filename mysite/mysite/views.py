@@ -22,6 +22,18 @@ def kmeans_home(request):
     if request.method == "POST":
         output = request.get_json()
         output_dict = json.loads(output)  # now the data is stored in a python dictionary
+        max_iterations, k = output_dict['max_iterations'], output_dict['k']
+        kmeans = k_means.KMeans(k=k, max_iterations=max_iterations)
+
+        # we suppose that the data is in 2d
+
+        points_x = [x for x in output_dict['points_x']]
+        points_y = [x for x in output_dict['points_y']]
+
+        points = np.asarray(list(np.asarray(zip(points_x, points_y))))
+        predictions = kmeans.predict(points)
+
+        return render(request, 'kmeans_home.html', predictions)
 
     return render(request, 'kmeans_home.html')
 
@@ -115,5 +127,21 @@ def svm_home(request):
     if request.method == "POST":
         output = request.get_json()
         output_dict = json.loads(output)  # now the data is stored in a python dictionary
+        learning_rate, lambda_param = output_dict['learning_rate'], output_dict['lambda_param']
+        n_iterations = output_dict['n_iterations']
+
+        svm = support_vectors_machines.SVM(learning_rate, lambda_param, n_iterations)
+
+        # we suppose the input is in 2d
+
+        points_x = [x for x in output_dict['points_x']]
+        points_y = [x for x in output_dict['points_y']]
+        points = np.asarray(list(np.asarray(zip(points_x, points_y))))
+
+        points_labels = np.asarray([x for x in output_dict['points_labels']])
+
+        svm.fit(points, points_labels)
+
+        return render(request, 'svm_home.html', {'w': svm.w, 'b': svm.b})
 
     return render(request, 'svm_home.html')

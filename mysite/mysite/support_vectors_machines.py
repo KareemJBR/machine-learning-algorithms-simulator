@@ -27,7 +27,3 @@ class SVM:
                         2 * self.lambda_param * self.w - np.dot(x_i, y_[idx])
                     )
                     self.b -= self.learning_rate * y_[idx]
-
-    def predict(self, x):
-        approx = np.dot(x, self.w) - self.b
-        return np.sign(approx)
