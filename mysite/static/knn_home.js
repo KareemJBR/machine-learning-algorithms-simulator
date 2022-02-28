@@ -9,6 +9,11 @@ let train_classes = [];
 let pointsCanvas = document.getElementById('points_canvas');
 let ctx = pointsCanvas.getContext('2d');
 
+function main(){
+    init_points();
+    submit_to_server();
+}
+
 function getRndInteger(min, max){
   return Math.floor(Math.random() * (max - min) ) + min;
 }
@@ -59,14 +64,9 @@ function submit_to_server(){
     const results = JSON.stringify(dict_values);
 
     $.ajax({
-        url: '/knn',
+        url: 'http://127.0.0.1:8000/knn',
         type: 'POST',
         contentType: 'application/JSON',
         data: JSON.stringify(results)
-    });
-}
-
-function main(){
-    init_points();
-    submit_to_server();
+    })
 }
