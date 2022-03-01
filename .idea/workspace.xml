@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f9775237-8162-4f92-aa4f-70e92417391c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/mysite/naive_bayes_classifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/mysite/naive_bayes_classifier.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/mysite/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/mysite/views.py" afterDir="false" />
-    </list>
+    <list default="true" id="f9775237-8162-4f92-aa4f-70e92417391c" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -135,7 +131,7 @@
       <workItem from="1646061153963" duration="2603000" />
       <workItem from="1646064121460" duration="2711000" />
       <workItem from="1646069522815" duration="787000" />
-      <workItem from="1646087146868" duration="5746000" />
+      <workItem from="1646087146868" duration="5841000" />
     </task>
     <servers />
   </component>
