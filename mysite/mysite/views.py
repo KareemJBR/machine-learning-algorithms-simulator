@@ -65,6 +65,19 @@ def lda_home(request):
         output = request.get_json()
         output_dict = json.loads(output)  # now the data is stored in a python dictionary
 
+        points_x = [x for x in output_dict['points_x']]
+        points_y = [x for x in output_dict['points_y']]
+
+        points = np.asarray(list(np.asarray(zip(points_x, points_y))))
+        points_labels = np.asarray([x for x in output_dict['points_labels']])
+
+        lda = linear_discriminant_analysis.LDA(2)
+        lda.fit(points, points_labels)
+
+        x_projected = lda.transform(points)
+
+        return render(request, 'lda_home.html', {'x_projected': x_projected})
+
     return render(request, 'lda_home.html')
 
 
@@ -81,6 +94,23 @@ def naive_bayes_home(request):
         output = request.get_json()
         output_dict = json.loads(output)  # now the data is stored in a python dictionary
 
+        train_x = [x for x in output_dict['train_x']]
+        train_y = [x for x in output_dict['train_y']]
+
+        train_points = np.asarray(list(np.asarray(zip(train_x, train_y))))
+        points_labels = np.asarray([x for x in output_dict['points_labels']])
+
+        naive_bayes = naive_bayes_classifier.NaiveBayes()
+        naive_bayes.fit(train_points, points_labels)
+
+        test_x = [x for x in output_dict['test_x']]
+        test_y = [x for x in output_dict['test_y']]
+
+        test_points = np.asarray(list(np.asarray(zip(test_x, test_y))))
+        predictions = naive_bayes.predict(test_points)
+
+        return render(request, 'naive_bayes_home.html', {'predictions': predictions})
+
     return render(request, 'naive_bayes_home.html')
 
 
@@ -91,7 +121,6 @@ def pca_home(request):
         n_components = output_dict['n_components']      # an integer in the range [1, 3]
 
         pca = principal_components_analysis.PCA(n_components=n_components)
-        train_x = train_y = train_z = []
         if n_components == 1:
             train_x = np.asarray([x for x in output_dict['train_x']])
             pca.fit(train_x)

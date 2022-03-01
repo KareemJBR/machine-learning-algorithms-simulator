@@ -2,43 +2,49 @@ import numpy as np
 
 
 class NaiveBayes:
-    def __init__(self, x, y):
-        self.y = y
-        self.classes_mean = {}
-        self.classes_variance = {}
-        self.classes_prior = {}
-        self.num_examples, self.num_features = x.shape
-        self.num_classes = len(np.unique(y))
-        self.eps = 1e-6
 
-    def fit(self, x):
-        self.classes_mean = {}
-        self.classes_variance = {}
-        self.classes_prior = {}
+    def __init__(self):
+        self._classes = None
+        self._mean = None
+        self._var = None
+        self._priors = None
 
-        for c in range(self.num_classes):
-            x_c = x[self.y == c]
+    def fit(self, x, y):
+        n_samples, n_features = x.shape
+        self._classes = np.unique(y)
+        n_classes = len(self._classes)
 
-            self.classes_mean[str(c)] = np.mean(x_c, axis=0)
-            self.classes_variance[str(c)] = np.var(x_c, axis=0)
-            self.classes_prior[str(c)] = x_c.shape[0] / x.shape[0]
+        # calculate mean, var, and prior for each class
+        self._mean = np.zeros((n_classes, n_features), dtype=np.float64)
+        self._var = np.zeros((n_classes, n_features), dtype=np.float64)
+        self._priors = np.zeros(n_classes, dtype=np.float64)
+
+        for idx, c in enumerate(self._classes):
+            x_c = x[y == c]
+            self._mean[idx, :] = x_c.mean(axis=0)
+            self._var[idx, :] = x_c.var(axis=0)
+            self._priors[idx] = x_c.shape[0] / float(n_samples)
 
     def predict(self, x):
-        probs = np.zeros((self.num_examples, self.num_classes))
+        y_pred = [self._predict(a) for a in x]
+        return np.array(y_pred)
 
-        for c in range(self.num_classes):
-            prior = self.classes_prior[str(c)]
-            probs_c = self.density_function(
-                x, self.classes_mean[str(c)], self.classes_variance[str(c)]
-            )
-            probs[:, c] = probs_c + np.log(prior)
+    def _predict(self, x):
+        posteriors = []
 
-        return np.argmax(probs, 1)
+        # calculate posterior probability for each class
+        for idx, c in enumerate(self._classes):
+            prior = np.log(self._priors[idx])
+            posterior = np.sum(np.log(self._pdf(idx, x)))
+            posterior = prior + posterior
+            posteriors.append(posterior)
 
-    def density_function(self, x, mean, sigma):
-        # calculate probability from Gaussian density function
-        const = -self.num_features / 2 * np.log(2 * np.pi) - 0.5 * np.sum(
-            np.log(sigma + self.eps)
-        )
-        probs = 0.5 * np.sum(np.power(x - mean, 2) / (sigma + self.eps), 1)
-        return const - probs
+        # return class with the highest posterior probability
+        return self._classes[np.argmax(posteriors)]
+
+    def _pdf(self, class_idx, x):
+        mean = self._mean[class_idx]
+        var = self._var[class_idx]
+        numerator = np.exp(-((x - mean) ** 2) / (2 * var))
+        denominator = np.sqrt(2 * np.pi * var)
+        return numerator / denominator
