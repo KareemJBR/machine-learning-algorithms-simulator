@@ -56,7 +56,8 @@ class KMeans:
             clusters[centroid_idx].append(idx)
         return clusters
 
-    def _closest_centroid(self, sample, centroids):
+    @staticmethod
+    def _closest_centroid(sample, centroids):
         # distance of the current sample to each centroid
         distances = [help_functions.euclidean_distance(sample, point) for point in centroids]
         closest_index = np.argmin(distances)

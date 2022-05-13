@@ -11,10 +11,6 @@ def home(request):
 
 
 def dfs_home(request):
-    if request.method == "POST":
-        output = request.get_json()
-        output_dict = json.loads(output)  # now the data is stored in a python dictionary
-
     return render(request, 'dfs_home.html')
 
 
@@ -82,10 +78,6 @@ def lda_home(request):
 
 
 def mle_home(request):
-    if request.method == "POST":
-        output = request.get_json()
-        output_dict = json.loads(output)  # now the data is stored in a python dictionary
-
     return render(request, 'mle_home.html')
 
 
