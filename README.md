@@ -6,10 +6,6 @@ Name: Kareem Jabareen
 Student Number: 211406343
 
 
-Name: Zaher Zoubi
-
-Student Number: 315802686
-
 ## Project Description
 
 This project aims to help students understand algorithms and how they act when changing their input in a dynamic visual way.
