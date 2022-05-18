@@ -1,6 +1,6 @@
 import numpy as np
 from . import help_functions
-from collections import Counter     # TODO: might need to implement it myself
+from collections import Counter
 
 
 class KNN:
