@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9775237-8162-4f92-aa4f-70e92417391c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/mysite/help_functions.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/mysite/k_nearest_neighbors.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/mysite/k_nearest_neighbors.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/mysite/k_means.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/mysite/k_means.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,6 +160,7 @@
       <workItem from="1652566189440" duration="61000" />
       <workItem from="1652874507380" duration="276000" />
       <workItem from="1652875257072" duration="122000" />
+      <workItem from="1652983345845" duration="55000" />
     </task>
     <servers />
   </component>

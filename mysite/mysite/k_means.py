@@ -1,5 +1,8 @@
 import numpy as np
-from . import help_functions
+
+
+def euclidean_distance(x1, x2):
+    return np.sqrt(np.sum((x1 - x2) ** 2))
 
 
 class KMeans:
@@ -59,7 +62,7 @@ class KMeans:
     @staticmethod
     def _closest_centroid(sample, centroids):
         # distance of the current sample to each centroid
-        distances = [help_functions.euclidean_distance(sample, point) for point in centroids]
+        distances = [euclidean_distance(sample, point) for point in centroids]
         closest_index = np.argmin(distances)
         return closest_index
 
@@ -73,7 +76,5 @@ class KMeans:
 
     def _is_converged(self, centroids_old, centroids):
         # distances between each old and new centroids, fol all centroids
-        distances = [
-            help_functions.euclidean_distance(centroids_old[i], centroids[i]) for i in range(self.K)
-        ]
+        distances = [euclidean_distance(centroids_old[i], centroids[i]) for i in range(self.K)]
         return sum(distances) == 0
