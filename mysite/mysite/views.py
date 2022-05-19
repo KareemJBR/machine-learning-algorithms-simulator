@@ -1,6 +1,5 @@
 import numpy as np
 from django.shortcuts import render
-import json
 from . import depth_first_search, k_means, k_nearest_neighbors, linear_discriminant_analysis
 from . import maximum_likelihood_estimation, naive_bayes_classifier, principal_components_analysis
 from . import support_vectors_machines
