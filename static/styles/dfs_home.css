@@ -10,3 +10,73 @@ h1 {
   justify-content: center;
   align-items: center;
 }
+
+.container {
+  display: inline-block;
+  margin-left: 50px;
+}
+
+#dfs {
+  width: 500px;
+  height: 450px;
+}
+
+h2, h3, h4 {
+  text-align: center;
+  margin: 0.1em 0;
+}
+
+.settings {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.group {
+  width: 20%;
+  display: flex;
+  justify-content: space-evenly;
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0px 20px 70px;
+}
+
+.wide-group {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0px 0px 20px;
+}
+
+#btnRun {
+  background-color: white;
+  color: black;
+  border: 2px solid red;
+  padding: 11px;
+  border-radius: 5px;
+  margin-top: 35px;
+}
+
+#btnNew {
+  background-color: white;
+  color: black;
+  border: 2px solid blue;
+  padding: 11px;
+  border-radius: 5px;
+  margin-top: 35px;
+}
+
+#selectTimestep {
+  background-color: white;
+  color: black;
+  border: 2px solid rgb(20, 21, 22);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#dfsResults {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
