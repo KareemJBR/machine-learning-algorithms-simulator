@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f9775237-8162-4f92-aa4f-70e92417391c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/core/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/algorithms/k_means.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/algorithms/k_means.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,6 +165,7 @@
       <workItem from="1653526295905" duration="62000" />
       <workItem from="1654549001797" duration="234000" />
       <workItem from="1654551594534" duration="25000" />
+      <workItem from="1654682619670" duration="37000" />
     </task>
     <servers />
   </component>
