@@ -1,72 +1,270 @@
-let k = 1;
-let num_of_classes = 4;
-const num_of_points = 40;
-const window_width = 800;
-const window_height = 600;
+function main() {
+    var HEIGHT = 600;
+    var WIDTH = 800;
+    var canvas = document.getElementById('canvas');
+    canvas.width = WIDTH;
+    canvas.height = HEIGHT;
 
-let train_x = [], train_y = [];
-let train_classes = [];
-let pointsCanvas = document.getElementById('points_canvas');
-let ctx = pointsCanvas.getContext('2d');
+    var ctx = canvas.getContext('2d');
+    ctx.height = HEIGHT;
+    ctx.width = WIDTH;
 
-function main(){
-    init_points();
-    submit_to_server();
-}
+    var num_classes = 3;
+    var num_points = 10;
+    var metric = l2_distance;
+    var k = 1;
 
-function getRndInteger(min, max){
-  return Math.floor(Math.random() * (max - min) ) + min;
-}
+    var state = {
+        num_classes: 4,
+        num_points: 40,
+        cluster_std: 50,
+        metric: l2_distance,
+        k: 1,
+        colors: [
+            'red', 'blue', 'green', 'purple', 'orange',
+        ],
+        small_step: 3,
+        big_step: 10,
+    };
 
-function init_points(){
-    let i, j, current_random_x = -1;
-    let succeeded = true;
-    let current_random_y = -1;
-    for(i =0;i < num_of_points;i++){
-        succeeded=true;
-        current_random_x = getRndInteger(0, window_width);
-        current_random_y = getRndInteger(0, window_height);
-        for(j=0;j<train_x.length;j++){
-            if(train_x[j].equals(current_random_x) && train_y.equals(current_random_y)){
-                i--;
-                succeeded=false;
+    function gen_points() {
+        state.points = generate_cluster_points(ctx, state.num_classes, state.num_points, state.cluster_std);
+    }
+    gen_points();
+
+    function redraw(speed) {
+        var step = state.small_step;
+        if (speed === 'fast') step = state.big_step;
+        ctx.clearRect(0, 0, ctx.width, ctx.height);
+        draw_boundaries(ctx, state, step);
+        draw_points(ctx, state.points, state.colors);
+    }
+    redraw();
+
+    // Handlers for metric buttons
+    $('#l2-btn').click(function () {
+        // state.metric = l2_distance;
+        state.metric = l2_distance;
+        redraw();
+    });
+    $('#l1-btn').click(function () {
+        state.metric = l1_distance;
+        redraw();
+    });
+
+    // Handlers for buttons that set K
+    for (var k = 1; k <= 7; k++) {
+        (function () {
+            var kk = k;
+            $('#k-' + k + '-btn').click(function () {
+                $('#k-' + state.k + '-btn').removeClass("active");
+                $(this).addClass("active");
+                state.k = kk;
+                redraw();
+            });
+        })();
+    }
+
+    // Handlers for buttons that set number of classes
+    for (var c = 2; c <= 5; c++) {
+        (function () {
+            var cc = c;
+            $('#num-cls-' + c + '-btn').click(function () {
+                $('#num-cls-' + state.num_classes + '-btn').removeClass("active");
+                $(this).addClass("active");
+                state.num_classes = cc;
+                gen_points();
+                redraw();
+            });
+        })();
+    }
+
+    var num_points_choices = [20, 30, 40, 50, 60];
+    for (var i = 0; i < num_points_choices.length; i++) {
+        (function () {
+            var num_points = num_points_choices[i];
+            var s = '#num-pts-' + num_points + '-btn';
+            console.log(s);
+            $('#num-pts-' + num_points + '-btn').click(function () {
+                $('#num-pts-' + state.num_points + '-btn').removeClass("active");
+                $(this).addClass("active");
+                state.num_points = num_points;
+                gen_points();
+                redraw();
+            });
+        })();
+    }
+
+    var dragging_point = null;
+    $(canvas).mousedown(function (e) {
+        var p = get_click_coords(canvas, e);
+        var thresh = 10;
+        var idx = null;
+        var min_dist = 100000;
+        for (var i = 0; i < state.num_points; i++) {
+            var dx = (p[0] - state.points[i][0]);
+            var dy = (p[1] - state.points[i][1]);
+            var d = Math.sqrt(dx * dx + dy * dy);
+            if (d < thresh && d < min_dist) {
+                min_dist = d;
+                idx = i;
             }
         }
-        if(succeeded){
-            train_x.push(current_random_x);
-            train_y.push(current_random_y);
+        dragging_point = idx;
+    });
+    $(canvas).mousemove(function (e) {
+        if (dragging_point === null) return;
+        var p = get_click_coords(canvas, e);
+        state.points[dragging_point][0] = p[0];
+        state.points[dragging_point][1] = p[1];
+        redraw('fast');
+    });
+    $(canvas).mouseup(function () {
+        dragging_point = null;
+        redraw();
+    })
+
+}
+
+
+function get_click_coords(obj, e) {
+    var offset = $(obj).offset();
+    var cx = e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft - Math.floor(offset.left);
+    var cy = e.clientY + document.body.scrollTop + document.documentElement.scrollTop - Math.floor(offset.top) + 1;
+    return [cx, cy];
+}
+
+
+
+function randn() {
+    // Using Box-Muller transform
+    var u = 1 - Math.random();
+    var v = 1 - Math.random();
+    var r = Math.sqrt(-2 * Math.log(u));
+    var t = Math.cos(2 * Math.PI * v);
+    return r * t;
+}
+
+
+function generate_uniform_points(ctx, num_classes, num_points) {
+    // Returns a list of [x, y, class]
+    var points = [];
+    for (var i = 0; i < num_points; i++) {
+        var x = ctx.width * Math.random();
+        var y = ctx.height * Math.random();
+        var c = Math.floor(num_classes * Math.random());
+        points.push([x, y, c]);
+    }
+    return points;
+}
+
+function generate_cluster_points(ctx, num_classes, num_points, std) {
+    // First generate random cluster centers
+    var centers = [];
+    for (var c = 0; c < num_classes; c++) {
+        var x = ctx.width * Math.random();
+        var y = ctx.height * Math.random();
+        centers.push([x, y]);
+    }
+
+    // Now generate points near cluster centers
+    var points = [];
+    for (var i = 0; i < num_points; i++) {
+        var c = Math.floor(num_classes * Math.random());
+        var x = centers[c][0] + std * randn();
+        var y = centers[c][1] + std * randn();
+        points.push([x, y, c]);
+    }
+    return points;
+}
+
+
+function draw_points(ctx, points, colors) {
+    for (var i = 0; i < points.length; i++) {
+        var x = points[i][0];
+        var y = points[i][1];
+        var c = points[i][2];
+
+        ctx.beginPath();
+        ctx.globalAlpha = 1.0;
+        ctx.fillStyle = colors[c];
+        ctx.arc(x, y, 5, 0, 2 * Math.PI);
+        ctx.fill();
+    }
+}
+
+
+function l2_distance(p1, p2) {
+    var dx = p1[0] - p2[0];
+    var dy = p1[1] - p2[1];
+    return Math.sqrt(dx * dx + dy * dy);
+}
+
+
+function l1_distance(p1, p2) {
+    var dx = p1[0] - p2[0];
+    var dy = p1[1] - p2[1];
+    return Math.abs(dx) + Math.abs(dy);
+}
+
+
+
+function find_neighbors(p, points, k, metric) {
+    var dists = [];
+    for (var i = 0; i < points.length; i++) {
+        var dist = metric(p, points[i]);
+        dists.push([dist, points[i]]);
+    }
+    dists.sort(function (a, b) { return a[0] - b[0] });
+    var neighbors = [];
+    for (var i = 0; i < k && i < dists.length; i++) {
+        neighbors.push(dists[i][1]);
+    }
+    return neighbors;
+}
+
+
+function majority_vote(points, num_classes) {
+    // Assume points is a list of the form [x, y, c]
+    var votes = [];
+    for (var c = 0; c < num_classes; c++) {
+        votes.push(0);
+    }
+    for (var i = 0; i < points.length; i++) {
+        votes[points[i][2]] += 1;
+    }
+    var max_votes = 0;
+    var winner = null;
+    for (var c = 0; c < num_classes; c++) {
+        if (votes[c] === max_votes) {
+            winner = null;
+        } else if (votes[c] > max_votes) {
+            max_votes = votes[c];
+            winner = c;
         }
     }
-
-    for(i=0;i<num_of_points;i++){
-        if(i<num_of_points/4)
-            train_classes.push(1);
-        else if(i<num_of_points/2)
-            train_classes.push(2);
-        else if(i<num_of_points*3/4)
-            train_classes.push(3);
-        else
-            train_classes.push(4);
-    }
-
+    return winner;
 }
 
-function submit_to_server(){
-    const dict_values = {
-        train_x,
-        train_y,
-        train_classes,
-        k,
-        window_width,
-        window_height
+
+function draw_boundaries(ctx, state, step) {
+    var eps = 0;
+    for (var x = step / 2; x < ctx.width; x += step) {
+        for (var y = step / 2; y < ctx.height; y += step) {
+            var neighbors = find_neighbors([x, y], state.points, state.k, state.metric);
+            var c = majority_vote(neighbors, state.num_classes);
+
+            if (c !== null) {
+                ctx.globalAlpha = 0.4;
+                ctx.fillStyle = state.colors[c];
+                ctx.fillRect(
+                    x - step / 2 - eps,
+                    y - step / 2 - eps,
+                    step + 2 * eps,
+                    step + 2 * eps);
+            }
+        }
     }
-
-    const results = JSON.stringify(dict_values);
-
-    $.ajax({
-        url: 'http://127.0.0.1:8000/knn',
-        type: 'POST',
-        contentType: 'application/JSON',
-        data: JSON.stringify(results)
-    })
 }
+
+$(main);
