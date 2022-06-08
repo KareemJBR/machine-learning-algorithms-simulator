@@ -1,8 +1,5 @@
 import numpy as np
-
-
-def euclidean_distance(x1, x2):
-    return np.sqrt(np.sum((x1 - x2) ** 2))
+from core.utils import euclidean_distance
 
 
 class KMeans:
@@ -18,7 +15,7 @@ class KMeans:
         self.x = None
         self.n_samples, self.n_features = 0, 0
 
-    def predict(self, x):   # TODO: consider plotting steps
+    def predict(self, x):
         self.x = x
         self.n_samples, self.n_features = x.shape
 
@@ -76,5 +73,7 @@ class KMeans:
 
     def _is_converged(self, centroids_old, centroids):
         # distances between each old and new centroids, fol all centroids
-        distances = [euclidean_distance(centroids_old[i], centroids[i]) for i in range(self.K)]
+        distances = [
+            euclidean_distance(centroids_old[i], centroids[i]) for i in range(self.K)
+        ]
         return sum(distances) == 0
