@@ -1,9 +1,6 @@
 import numpy as np
 from collections import Counter
-
-
-def euclidean_distance(x1, x2):
-    return np.sqrt(np.sum((x1 - x2) ** 2))
+from core.utils import euclidean_distance
 
 
 class KNN:
