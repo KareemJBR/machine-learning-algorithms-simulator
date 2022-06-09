@@ -1,46 +1,104 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-<head>
-  <meta charset="utf-8">
-  <title>KNN</title>
-  {% load static %}
-  <link rel="stylesheet" href="{% static 'knn_home.css' %}">
-  <link rel="icon" href="{% static 'machine_learning_icon.png' %}">
-  <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js'></script>
-  <script src='//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'></script>
-  <script src='//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js'></script>
-  <script src="{% static 'knn_home.js' %}"></script>
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<style>
-  canvas {
-    cursor: pointer;
-  }
-  .instructions {
-    font-size: 14pt;
-  }
-</style>
-<body>
-<div class='container-fluid'>
-  <h1>K Nearest Neighbors (KNN)</h1>
-
-  <div class="row">
-    <div class="col-xs-4 col-xs-offset-4 instructions">
-      This interactive demo lets you explore the K-Nearest Neighbors algorithm for
-      classification.
+  <head>
+    <meta charset="utf-8" />
+    <title>KNN</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles/knn_home.css' %}" />
+    <link rel="icon" href="{% static 'assets/machine_learning_icon.png' %}" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link
+      href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    canvas {
+      cursor: pointer;
+    }
+    .instructions {
+      font-size: 14pt;
+    }
+  </style>
+  <body>
+    <h3>K-Nearest Neighbors (KNN)</h3>
+    <br />
+    <h4>
+      This interactive demo lets you explore the K-Nearest Neighbors algorithm.
+      Move points around by clicking and dragging. for classification.
+    </h4>
+      <div class="settings">
+        <div class="wide-group">
+          <h4 class="text">Number of Neighbors</h4>
+          <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-primary active" id="k-1-btn">
+              <input type="radio" name="k" checked/> 1
+            </label>
+            <label class="btn btn-primary" id="k-2-btn">
+              <input type="radio" name="k" /> 2
+            </label>
+            <label class="btn btn-primary" id="k-3-btn">
+              <input type="radio" name="k" /> 3
+            </label>
+            <label class="btn btn-primary" id="k-4-btn">
+              <input type="radio" name="k" /> 4
+            </label>
+            <label class="btn btn-primary" id="k-5-btn">
+              <input type="radio" name="k" /> 5
+            </label>
+            <label class="btn btn-primary" id="k-6-btn">
+              <input type="radio" name="k" /> 6
+            </label>
+            <label class="btn btn-primary" id="k-7-btn">
+              <input type="radio" name="k" /> 7
+            </label>
+          </div>
+        </div>
+        <div class="wide-group">
+          <h4 class="text">Number of points</h4>
+          <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-primary" id="num-pts-20-btn">
+              <input type="radio" name="num-pts" /> 20
+            </label>
+            <label class="btn btn-primary" id="num-pts-30-btn">
+              <input type="radio" name="num-pts" /> 30
+            </label>
+            <label class="btn btn-primary active" id="num-pts-40-btn">
+              <input type="radio" name="num-pts" checked /> 40
+            </label>
+            <label class="btn btn-primary" id="num-pts-50-btn">
+              <input type="radio" name="num-pts" /> 50
+            </label>
+            <label class="btn btn-primary" id="num-pts-60-btn">
+              <input type="radio" name="num-pts" /> 60
+            </label>
+          </div>
+        </div>
+        <div class="wide-group">
+          <h4 class="text">Number of classes</h4>
+          <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-primary" id="num-cls-2-btn">
+              <input type="radio" name="num-cls" /> 2
+            </label>
+            <label class="btn btn-primary" id="num-cls-3-btn">
+              <input type="radio" name="num-cls" /> 3
+            </label>
+            <label class="btn btn-primary active" id="num-cls-4-btn">
+              <input type="radio" name="num-cls" checked /> 4
+            </label>
+            <label class="btn btn-primary" id="num-cls-5-btn">
+              <input type="radio" name="num-cls" /> 5
+            </label>
+          </div>
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col-xs-12 text-center">
+          <canvas id="canvas"></canvas>
+        </div>
+      </div>
     </div>
-  </div>
-
-  <div class="row">
-    <div class="col-xs-12 text-center">
-      <canvas id="canvas"></canvas>
-    </div>
-  </div>
-
-
-</div>
-<h class="doNotShow">{{ predictions }}</h>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script type="text/javascript" src="{% static 'knn_home.js' %}"></script>
-</body>
+    <script type="text/javascript" src="{% static 'js/knn_home.js' %}"></script>
+  </body>
 </html>
