@@ -52,7 +52,7 @@ class MLClassifier:
 
         return scalar * (np.e**exp)
 
-    def predict(self, x: np.ndarray) -> ndarray[int]:
+    def predict(self, x: np.ndarray) -> int:
         likelihoods = [self._class_likelihood(x, i) for i in range(self.n_classes)]
         return np.argmax(likelihoods)
 
