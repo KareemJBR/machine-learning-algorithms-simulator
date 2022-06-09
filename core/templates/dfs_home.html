@@ -1,15 +1,71 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>DFS</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'dfs_home.css' %}">
-    <link rel="icon" href="{% static 'machine_learning_icon.png' %}">
+    <link rel="stylesheet" href="{% static 'styles/dfs_home.css' %}" />
+    <link rel="icon" href="{% static 'assets/machine_learning_icon.png' %}" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sigma.js/1.2.0/sigma.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/buckets/1.90.0/buckets.min.js"></script>
+    <style>
+      .axis {
+        font: 10px sans-serif;
+      }
+      path {
+        stroke: steelblue;
+        stroke-width: 2;
+        fill: none;
+      }
+
+      .axis path,
+      .axis line {
+        fill: none;
+        stroke: #000;
+        shape-rendering: crispEdges;
+      }
+    </style>
   </head>
   <body>
     <h1>Depth First Search (DFS)</h1>
-
-    <script type="text/javascript" src="{% static 'dfs_home.js' %}"></script>
+    <h3>
+      This demo lets you explore the DFS algorithm that is used for traversing
+      or searching tree or graph data structures.
+    </h3>
+    <div class="settings">
+      <div class="wide-group">
+        <p><b>Black</b> (=Explored Nodes)</p>
+        <p><b>Yellow</b> (=Frontier Nodes)</p>
+      </div>
+      <div class="wide-group">
+        <label for="selectTimestep">Time between moves (ms):</label>
+        <br />
+        <select id="selectTimestep">
+          <option value="50" selected>50</option>
+          <option value="100">100</option>
+          <option value="150">150</option>
+          <option value="200">200</option>
+          <option value="250">250</option>
+          <option value="300">300</option>
+          <option value="400">400</option>
+          <option value="450">450</option>
+          <option value="500">500</option>
+          <option value="1000">1000</option>
+        </select>
+        <button id="btnRun">Run Again</button>
+        <button id="btnNew">Run New</button>
+      </div>
+      <br />
+      <div class="container">
+        <div id="dfs"></div>
+      </div>
+      <div id="dfsResults">
+        <p id="dfsResultsCost"></p>
+        <p id="dfsResultsLength"></p>
+        <p id="dfsResultsExplored"></p>
+        <p id="dfsResultsFrontier"></p>
+      </div>
+    </div>
+    <script type="text/javascript" src="{% static 'js/dfs_home.js' %}"></script>
   </body>
 </html>

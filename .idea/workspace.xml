@@ -2,8 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9775237-8162-4f92-aa4f-70e92417391c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/algorithms/k_means.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/algorithms/k_means.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/algorithms/linear_discriminant_analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/algorithms/linear_discriminant_analysis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/algorithms/maximum_likelihood_estimation.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/algorithms/maximum_likelihood_estimation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/algorithms/naive_bayes_classifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/algorithms/naive_bayes_classifier.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/algorithms/principal_components_analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/algorithms/principal_components_analysis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/algorithms/support_vectors_machines.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/algorithms/support_vectors_machines.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/styles/mle_home.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/styles/mle_home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/styles/naive_bayes_home.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/styles/naive_bayes_home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/styles/pca_home.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/styles/pca_home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/styles/svm_home.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/styles/svm_home.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,6 +175,7 @@
       <workItem from="1654549001797" duration="234000" />
       <workItem from="1654551594534" duration="25000" />
       <workItem from="1654682619670" duration="37000" />
+      <workItem from="1654685059570" duration="546000" />
     </task>
     <servers />
   </component>

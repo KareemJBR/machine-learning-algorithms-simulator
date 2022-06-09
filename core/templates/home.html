@@ -1,120 +1,159 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Home Page</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'home.css' %}">
-    <link rel="icon" href="{% static 'machine_learning_icon.png' %}">
+    <link rel="stylesheet" href="{% static 'styles/home.css' %}" />
+    <link rel="icon" href="{% static 'assets/machine_learning_icon.png' %}" />
   </head>
   <body>
-  <h1 id="pageHeader">ML Algorithms Simulator</h1>
-  <br>
+    <h1 id="pageHeader">ML Algorithms Simulator</h1>
+    <br />
 
-  <div class="algorithmsSelection">
-
-    <a href="dfs">
-      <div class="card" style="width: 12rem; margin: 12px">
-        <img src="{% static 'dfs_image.gif' %}" class="card-img-top" alt="Error Loading Image">
-        <div class="card-body">
-          <p class="card-text">Depth First Search</p>
+    <div class="algorithmsSelection">
+      <a href="dfs">
+        <div class="card" style="width: 12rem; margin: 12px">
+          <img
+            src="{% static 'assets/dfs_image.gif' %}"
+            class="card-img-top"
+            alt="Error Loading Image"
+          />
+          <div class="card-body">
+            <p class="card-text">Depth First Search</p>
+          </div>
         </div>
-      </div>
-    </a>
+      </a>
 
-    <a href="kmeans">
-      <div class="card" style="width: 12rem; margin: 12px">
-        <img src="{% static 'kmeans_image.gif' %}" class="card-img-top" alt="Error Loading Image">
-        <div class="card-body">
-          <p class="card-text">K Means</p>
+      <a href="kmeans">
+        <div class="card" style="width: 12rem; margin: 12px">
+          <img
+            src="{% static 'assets/kmeans_image.gif' %}"
+            class="card-img-top"
+            alt="Error Loading Image"
+          />
+          <div class="card-body">
+            <p class="card-text">K Means</p>
+          </div>
         </div>
-      </div>
-    </a>
+      </a>
 
-    <a href="knn">
-      <div class="card" style="width: 12rem; margin: 12px">
-        <img src="{% static 'knn_image.png' %}" class="card-img-top" alt="Error Loading Image">
-        <div class="card-body">
-          <p class="card-text">K Nearest Neighbors</p>
+      <a href="knn">
+        <div class="card" style="width: 12rem; margin: 12px">
+          <img
+            src="{% static 'assets/knn_image.png' %}"
+            class="card-img-top"
+            alt="Error Loading Image"
+          />
+          <div class="card-body">
+            <p class="card-text">K Nearest Neighbors</p>
+          </div>
         </div>
-      </div>
-    </a>
+      </a>
 
-    <a href="lda">
-      <div class="card" style="width: 12rem; margin: 12px">
-        <img src="{% static 'lda_image.jpg' %}" class="card-img-top" alt="Error Loading Image">
-        <div class="card-body">
-          <p class="card-text">Linear Discriminant Analysis</p>
+      <a href="lda">
+        <div class="card" style="width: 12rem; margin: 12px">
+          <img
+            src="{% static 'assets/lda_image.jpg' %}"
+            class="card-img-top"
+            alt="Error Loading Image"
+          />
+          <div class="card-body">
+            <p class="card-text">Linear Discriminant Analysis</p>
+          </div>
         </div>
-      </div>
-    </a>
-
-  </div>
-
-  <br>
-  <br>
-  <br>
-
-  <div class="algorithmsSelection">
-
-    <a href="mle">
-      <div class="card" style="width: 12rem; margin: 12px">
-        <img src="{% static 'mle_image.png' %}" class="card-img-top" alt="Error Loading Image">
-        <div class="card-body">
-          <p class="card-text">Maximum Likelihood Estimation</p>
-        </div>
-      </div>
-    </a>
-
-    <a href="naive_bayes">
-      <div class="card" style="width: 12rem; margin: 12px">
-        <img src="{% static 'naive_bayes_image.png' %}" class="card-img-top" alt="Error Loading Image">
-        <div class="card-body">
-          <p class="card-text">Naive Bayes Classifier</p>
-        </div>
-      </div>
-    </a>
-
-    <a href="pca">
-      <div class="card" style="width: 12rem; margin: 12px">
-        <img src="{% static 'pca_image.png' %}" class="card-img-top" alt="Error Loading Image">
-        <div class="card-body">
-          <p class="card-text">Principal Components Analysis</p>
-        </div>
-      </div>
-    </a>
-
-    <a href="svm">
-      <div class="card" style="width: 12rem; margin: 12px">
-        <img src="{% static 'svm_image.png' %}" class="card-img-top" alt="Error Loading Image">
-        <div class="card-body">
-          <p class="card-text">Support Vectors Machine</p>
-        </div>
-      </div>
-    </a>
-
+      </a>
     </div>
 
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+    <br />
+    <br />
+    <br />
 
-    <hr>
-      <div style="width: 100%; overflow: hidden;">
-        <div style="width: 600px;float: left;">
-          <h3>Contacts: </h3>
-          <p>Kareem Jabareen</p>
-          <a href="https://www.linkedin.com/in/kareem-mokhtar-jabareen/">
-            <img class="icon_img" src="{% static 'linkedIn_icon.png' %}" width="80px" height="80px" alt="Error loading LinkedIn icon.">
-          </a>
-
-          <a href="https://github.com/KareemJBR">
-            <img class="icon_img" src="{% static 'github_icon.png' %}" width="80px" height="80px" alt="Error loading Github icon.">
-          </a>
+    <div class="algorithmsSelection">
+      <a href="mle">
+        <div class="card" style="width: 12rem; margin: 12px">
+          <img
+            src="{% static 'assets/mle_image.png' %}"
+            class="card-img-top"
+            alt="Error Loading Image"
+          />
+          <div class="card-body">
+            <p class="card-text">Maximum Likelihood Estimation</p>
+          </div>
         </div>
-      </div>
+      </a>
 
+      <a href="naive_bayes">
+        <div class="card" style="width: 12rem; margin: 12px">
+          <img
+            src="{% static 'assets/naive_bayes_image.png' %}"
+            class="card-img-top"
+            alt="Error Loading Image"
+          />
+          <div class="card-body">
+            <p class="card-text">Naive Bayes Classifier</p>
+          </div>
+        </div>
+      </a>
+
+      <a href="pca">
+        <div class="card" style="width: 12rem; margin: 12px">
+          <img
+            src="{% static 'assets/pca_image.png' %}"
+            class="card-img-top"
+            alt="Error Loading Image"
+          />
+          <div class="card-body">
+            <p class="card-text">Principal Components Analysis</p>
+          </div>
+        </div>
+      </a>
+
+      <a href="svm">
+        <div class="card" style="width: 12rem; margin: 12px">
+          <img
+            src="{% static 'assets/svm_image.png' %}"
+            class="card-img-top"
+            alt="Error Loading Image"
+          />
+          <div class="card-body">
+            <p class="card-text">Support Vectors Machine</p>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <hr />
+    <div style="width: 100%; overflow: hidden">
+      <div style="width: 600px; float: left">
+        <h3>Contacts:</h3>
+        <p>Kareem Jabareen</p>
+        <a href="https://www.linkedin.com/in/kareem-mokhtar-jabareen/">
+          <img
+            class="icon_img"
+            src="{% static 'assets/linkedIn_icon.png' %}"
+            width="80px"
+            height="80px"
+            alt="Error loading LinkedIn icon."
+          />
+        </a>
+
+        <a href="https://github.com/KareemJBR">
+          <img
+            class="icon_img"
+            src="{% static 'assets/github_icon.png' %}"
+            width="80px"
+            height="80px"
+            alt="Error loading Github icon."
+          />
+        </a>
+      </div>
+    </div>
   </body>
 </html>
