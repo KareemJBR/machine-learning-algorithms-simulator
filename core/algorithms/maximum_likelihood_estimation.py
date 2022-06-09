@@ -1,8 +1,8 @@
 import numpy as np
+from numpy import ndarray
 
 
 class MLClassifier:
-
     def __init__(self):
         self.d, self.n_classes, self.mu_list = None, None, None
         self.sigma_inv_list = None
@@ -50,9 +50,9 @@ class MLClassifier:
         scalar = self.scalars[cls]
         exp = (-1 / 2) * np.dot(np.matmul(x - mu, sigma_inv), x - mu)
 
-        return scalar * (np.e ** exp)
+        return scalar * (np.e**exp)
 
-    def predict(self, x: np.ndarray) -> int:
+    def predict(self, x: np.ndarray) -> ndarray[int]:
         likelihoods = [self._class_likelihood(x, i) for i in range(self.n_classes)]
         return np.argmax(likelihoods)
 
