@@ -5,12 +5,12 @@ plt.switch_backend("agg")
 
 
 class SVM:
-    def __init__(self, param=1.0):
+    def __init__(self, c=1.0):
         self._support_vectors = None
-        self.param = param
+        self.C = c
         self.beta = None
         self.b = None
-        self.x = None
+        self.X = None
         self.y = None
 
         # n is the number of data points
@@ -23,7 +23,7 @@ class SVM:
         return x.dot(self.beta) + self.b
 
     def __cost(self, margin):
-        return (1 / 2) * self.beta.dot(self.beta) + self.param * np.sum(
+        return (1 / 2) * self.beta.dot(self.beta) + self.C * np.sum(
             np.maximum(0, 1 - margin)
         )
 
@@ -37,7 +37,7 @@ class SVM:
         self.b = 0
 
         # Required only for plotting
-        self.x = x
+        self.X = x
         self.y = y
 
         loss_array = []
@@ -47,12 +47,12 @@ class SVM:
             loss_array.append(loss)
 
             misclassified_pts_idx = np.where(margin < 1)[0]
-            d_beta = self.beta - self.param * y[misclassified_pts_idx].dot(
+            d_beta = self.beta - self.C * y[misclassified_pts_idx].dot(
                 x[misclassified_pts_idx]
             )
             self.beta = self.beta - lr * d_beta
 
-            d_b = -self.param * np.sum(y[misclassified_pts_idx])
+            d_b = -self.C * np.sum(y[misclassified_pts_idx])
             self.b = self.b - lr * d_b
 
         self._support_vectors = np.where(self.__margin(x, y) <= 1)[0]
@@ -76,8 +76,8 @@ class SVM:
         z = self.__decision_function(xy).reshape(xx.shape)
 
         item = {
-            "x": self.x[:, 0].tolist(),
-            "y": self.x[:, 1].tolist(),
+            "x": self.X[:, 0].tolist(),
+            "y": self.X[:, 1].tolist(),
             "z": z.tolist(),
             "color": self.y.tolist(),
         }
