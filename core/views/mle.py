@@ -1,12 +1,10 @@
 import base64
 import json
 from io import BytesIO
-
 import matplotlib.pyplot as plt
 import numpy as np
 import scipy
 import scipy.stats
-
 from django.http import JsonResponse
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
@@ -17,6 +15,7 @@ plt.switch_backend("agg")
 
 @csrf_exempt
 def mle(request):
+
     if request.method == "POST":
         plt.close("all")
         output_dict = json.loads(request.body)

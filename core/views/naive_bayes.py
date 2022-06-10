@@ -2,12 +2,12 @@ import pandas as pd
 from django.http import JsonResponse
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
-
 from core.algorithms import NaiveBayes
 
 
 @csrf_exempt
 def naive_bayes(request):
+
     if request.method == "POST":
         # upload Iris dataset -  shape is (150, 5)
         df = pd.read_csv(
@@ -16,12 +16,12 @@ def naive_bayes(request):
         # shuffle dataset with sample
         df = df.sample(frac=1, random_state=1).reset_index(drop=True)
         # set features and target
-        X, y = df.iloc[:, :-1], df.iloc[:, -1]
+        x, y = df.iloc[:, :-1], df.iloc[:, -1]
         # # split on train and test (0.7|0.3)
-        X_train, X_test, y_train, y_test = X[:100], X[100:], y[:100], y[100:]
+        x_train, x_test, y_train, y_test = x[:100], x[100:], y[:100], y[100:]
         x = NaiveBayes()
-        x.fit(X_train, y_train)
-        predictions = x.predict(X_test)
+        x.fit(x_train, y_train)
+        predictions = x.predict(x_test)
         accuracy = x.accuracy(y_test, predictions)
         (
             predicted_versicolor,
@@ -35,4 +35,5 @@ def naive_bayes(request):
             "accuracy": accuracy,
         }
         return JsonResponse({"data": data})
+
     return render(request, "naive_bayes_home.html")
