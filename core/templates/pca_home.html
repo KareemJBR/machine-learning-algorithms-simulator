@@ -1,17 +1,54 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>PCA</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'pca_home.css' %}">
-    <link rel="icon" href="{% static 'machine_learning_icon.png' %}">
+    <link rel="icon" href="{% static 'assets/machine_learning_icon.png' %}" />
+    <link rel="stylesheet" href="{% static 'styles/pca_home.css' %}" />
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://d3js.org/d3.v4.0.0-alpha.28.min.js"
+    ></script>
   </head>
   <body>
     <h1>Principal Components Analysis (PCA)</h1>
+    <h2>
+      PCA is an unsupervised learning algorithm that is used for the
+      dimensionality reduction in machine learning.
+    </h2>
+    <div class="settings">
+      <div class="wide-group">
+        <br />
+        <label for="n_components"
+          >Number of components: <span id="n_components-pl">2</span></label
+        >
+      </div>
+      <div class="wide-group">
+        <input type="number" id="n_components" min="2" max="3" value="2" />
+      </div>
+      <div class="wide-group">
+        <button class="analyze">Analyze</button>
+      </div>
+      <div class="wide-group">
+        <input
+          class="dataset"
+          type="button"
+          onclick="location.href='https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/iris.csv';"
+          value="See Dataset"
+        />
+      </div>
+    </div>
+    <form method="POST" action="" class="formData">
+      <p class="responseData">{{data}}</p>
+    </form>
+    <img id="image" src="{% static 'assets/pca3n.png' %}" alt="" width="500" />
+    <div id="pca"></div>
+    {% if plt_div %} {{ plt_div|safe }} {% else %}
+    <p>No graph was provided.</p>
+    {% endif %}
 
-
-
-    <script type="text/javascript" src="{% static 'pca_home.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/pca_home.js' %}"></script>
   </body>
 </html>

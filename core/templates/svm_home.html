@@ -1,16 +1,50 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>SVM</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'svm_home.css' %}">
-    <link rel="icon" href="{% static 'machine_learning_icon.png' %}">
+    <link rel="stylesheet" href="{% static 'styles/svm_home.css' %}" />
+    <link rel="icon" href="{% static 'assets/machine_learning_icon.png' %}" />
+    <script src="https://d3js.org/d3.v4.js"></script>
   </head>
   <body>
     <h1>Support Vectors Machine (SVM)</h1>
+    <h3>
+      This interactive demo lets you explore the SVM algorithm that is used for
+      Classification problems.
+    </h3>
+    <h3>
+      The width of the margin changes based on the value of C hyper parameter.
+    </h3>
+    <div class="settings">
+      <div class="wide-group">
+        <label for="c">C: <span id="c-pl">1</span></label>
+      </div>
+      <div class="wide-group">
+        <input type="number" id="c" min="1" max="1000" value="1" class="c" />
+      </div>
+      <div class="wide-group">
+        <label for="selectTimestep">Dot color:</label>
+      </div>
+      <div class="wide-group">
+        <select id="dotColor">
+          <option value="-1">Red</option>
+          <option value="1" selected>Blue</option>
+        </select>
+      </div>
+      <div class="wide-group">
+        <button class="classify">Classify</button>
+      </div>
+      <div class="wide-group">
+        <button class="reset">Reset</button>
+      </div>
+    </div>
+    <form method="POST" action="" class="formData">
+      <p class="responseData">{{data}}</p>
+    </form>
+    <div class="svm"></div>
 
-
-    <script type="text/javascript" src="{% static 'svm_home.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/svm_home.js' %}"></script>
   </body>
 </html>

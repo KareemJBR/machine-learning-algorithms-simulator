@@ -1,16 +1,41 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>MLE</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'mle_home.css' %}">
-    <link rel="icon" href="{% static 'machine_learning_icon.png' %}">
+    <link rel="stylesheet" href="{% static 'styles/mle_home.css' %}" />
+    <link rel="icon" href="{% static 'assets/machine_learning_icon.png' %}" />
+    <script src="https://d3js.org/d3.v4.js"></script>
   </head>
   <body>
     <h1>Maximum Likelihood Estimation (MLE)</h1>
+    <h2>
+      MLE is a method of estimating the parameters of a model using a set of
+      data.
+    </h2>
+    <div class="settings">
+      <div class="wide-group">
+        <label for="mean">μ: <span id="mean-pl">40.1</span></label>
+      </div>
+      <div class="wide-group">
+        <input type="number" id="mean" min="0.0" max="100.0" value="40.1" />
+      </div>
+      <div class="wide-group">
+        <label for="points">σ: <span id="std-pl">9.97</span></label>
+      </div>
+      <div class="wide-group">
+        <input type="number" id="std" min="0.0" max="100.0" value="9.97" />
+      </div>
+      <div class="wide-group">
+        <button class="analyze">Analyze</button>
+      </div>
+      <div class="wide-group">
+        <button class="reset">Reset</button>
+      </div>
+    </div>
+    <img id="plot" src="" />
 
-
-    <script type="text/javascript" src="{% static 'mle_home.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/mle_home.js' %}"></script>
   </body>
 </html>
