@@ -1,50 +1,87 @@
 import numpy as np
+import pandas as pd
 
 
 class NaiveBayes:
+    """
+    Bayes Theorem form
+    P(y|X) = P(X|y) * P(y) / P(X)
+    """
 
     def __init__(self):
-        self._classes = None
-        self._mean = None
-        self._var = None
-        self._priors = None
+        self.prior = None
+        self.mean = None
+        self.var = None
+        self.classes = None
+        self.count = None
+        self.feature_nums = None
+        self.rows = None
 
-    def fit(self, x, y):
-        n_samples, n_features = x.shape
-        self._classes = np.unique(y)
-        n_classes = len(self._classes)
+    def calc_prior(self, features, target):
+        """Calculates prior probabilities P(y)"""
+        self.prior = (
+            features.groupby(target).apply(lambda x: len(x)) / self.rows
+        ).to_numpy()
+        return self.prior
 
-        # calculate mean, var, and prior for each class
-        self._mean = np.zeros((n_classes, n_features), dtype=np.float64)
-        self._var = np.zeros((n_classes, n_features), dtype=np.float64)
-        self._priors = np.zeros(n_classes, dtype=np.float64)
+    def calc_statistics(self, features, target):
+        """Calculates mean, variance for each column and convert to numpy array"""
+        self.mean = features.groupby(target).apply(np.mean).to_numpy()
+        self.var = features.groupby(target).apply(np.var).to_numpy()
+        return self.mean, self.var
 
-        for idx, c in enumerate(self._classes):
-            x_c = x[y == c]
-            self._mean[idx, :] = x_c.mean(axis=0)
-            self._var[idx, :] = x_c.var(axis=0)
-            self._priors[idx] = x_c.shape[0] / float(n_samples)
+    def gaussian_density(self, class_idx, x):
+        """
+        Calculates probability from gaussian density function (normally distributed).
+        We assume that probability of specific target value given specific class is normally distributed
 
-    def predict(self, x):
-        y_pred = [self._predict(a) for a in x]
-        return np.array(y_pred)
-
-    def _predict(self, x):
-        posteriors = []
-
-        # calculate posterior probability for each class
-        for idx, c in enumerate(self._classes):
-            prior = np.log(self._priors[idx])
-            posterior = np.sum(np.log(self._pdf(idx, x)))
-            posterior = prior + posterior
-            posteriors.append(posterior)
-
-        # return class with the highest posterior probability
-        return self._classes[np.argmax(posteriors)]
-
-    def _pdf(self, class_idx, x):
-        mean = self._mean[class_idx]
-        var = self._var[class_idx]
-        numerator = np.exp(-((x - mean) ** 2) / (2 * var))
+        probability density function derived from wikipedia:
+        (1/√2pi*σ) * exp((-1/2)*((x-μ)^2)/(2*σ²)), where μ is mean, σ² is variance, σ is quare root of variance
+        (standard deviation)
+        """
+        mean = self.mean[class_idx]
+        var = self.var[class_idx]
+        numerator = np.exp((-1 / 2) * ((x - mean) ** 2) / (2 * var))
         denominator = np.sqrt(2 * np.pi * var)
-        return numerator / denominator
+        prob = numerator / denominator
+        return prob
+
+    def calc_posterior(self, x):
+        posteriors = []
+        # calculate posterior probability for each class
+        for i in range(self.count):
+            prior = np.log(
+                self.prior[i]
+            )  # use the log to make it more numerically stable
+            conditional = np.sum(
+                np.log(self.gaussian_density(i, x))
+            )  # use the log to make it more numerically stable
+            posterior = prior + conditional
+            posteriors.append(posterior)
+        # return class with the highest posterior probability
+        return self.classes[np.argmax(posteriors)]
+
+    def fit(self, features, target):
+        self.classes = np.unique(target)
+        self.count = len(self.classes)
+        self.feature_nums = features.shape[1]
+        self.rows = features.shape[0]
+
+        self.calc_statistics(features, target)
+        self.calc_prior(features, target)
+
+    def predict(self, features):
+        preds = [self.calc_posterior(f) for f in features.to_numpy()]
+        return preds
+
+    def accuracy(self, y_test, y_pred):
+        accuracy = np.sum(y_test == y_pred) / len(y_test)
+        return accuracy
+
+    def get_formatted_predicted_values(self, y_pred, target):
+        pr = pd.DataFrame(data=y_pred, columns=[target])
+        predicted_list = pr.value_counts(dropna=False).tolist()
+        predicted_versicolor = predicted_list[0]
+        predicted_setosa = predicted_list[1]
+        predicted_virginica = predicted_list[2]
+        return predicted_versicolor, predicted_setosa, predicted_virginica
