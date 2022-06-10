@@ -1,16 +1,47 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>LDA</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'lda_home.css' %}">
-    <link rel="icon" href="{% static 'machine_learning_icon.png' %}">
+    <link rel="stylesheet" href="{% static 'styles/lda_home.css' %}" />
+    <link rel="icon" href="{% static 'assets/machine_learning_icon.png' %}" />
+    <script src="https://d3js.org/d3.v4.js"></script>
   </head>
   <body>
     <h1>Linear Discriminant Analysis (LDA)</h1>
+    <h3>
+      This interactive demo lets you explore the LDA algorithm that is used for
+      modelling differences in groups.
+    </h3>
+    <div class="settings">
+      <!-- <div class="group">
+        <br />
+        <label for="points"
+          >Number of Points Per Class: <span id="points-pl">20</span></label
+        >
+        <input type="range" id="points" min="20" max="50" value="20" />
+      </div> -->
+      <div class="wide-group">
+        <button class="classify">Classify</button>
+      </div>
+      <div class="wide-group">
+        <button class="reset">Reset</button>
+      </div>
+      <div class="wide-group">
+        <input
+          class="dataset"
+          type="button"
+          onclick="location.href='https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/iris.csv';"
+          value="See Dataset"
+        />
+      </div>
+    </div>
+    <form method="POST" action="" class="formData">
+      <p class="responseData">{{data}}</p>
+    </form>
+    <div id="lda"></div>
 
-
-    <script type="text/javascript" src="{% static 'lda_home.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/lda_home.js' %}"></script>
   </body>
 </html>

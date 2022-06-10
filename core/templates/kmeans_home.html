@@ -1,15 +1,46 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
-    <title>K Means</title>
+    <meta charset="utf-8" />
+    <title>K-Means</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'kmeans_home.css' %}">
-    <link rel="icon" href="{% static 'machine_learning_icon.png' %}">
+    <link rel="stylesheet" href="{% static 'styles/kmeans_home.css' %}" />
+    <link rel="icon" href="{% static 'assets/machine_learning_icon.png' %}" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.5.0/d3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-queue/3.0.3/d3-queue.js"></script>
   </head>
   <body>
-    <h1>K Means</h1>
+    <h1>K-Means Clustering</h1>
+    <h2>
+      This interactive demo lets you explore the K-Means clustering algorithm
+    </h2>
+    <h2>that is used to solve the clustering problems.</h2>
+    <div class="settings">
+      <div class="group">
+        <label for="n">N (Number of Points): <span id="n-pl">100</span></label>
+        <input type="range" id="n" min="2" max="1000" value="100" />
+      </div>
+      <div class="wide-group">
+        <button class="step">Step</button>
+      </div>
+      <div class="wide-group">
+        <button class="restart" disabled="true">Restart</button>
+      </div>
+      <div class="wide-group">
+        <button class="reset">Reset</button>
+      </div>
+      <div class="group">
+        <label for="k">K (Number of Clusters): <span id="k-pl">5</span></label>
+        <input type="range" id="k" min="2" max="50" value="5" />
+      </div>
+    </div>
+    <br />
+    <svg class="kmeans"></svg>
 
-    <script type="text/javascript" src="{% static 'kmeans_home.js' %}"></script>
+    <script
+      type="text/javascript"
+      src="{% static 'js/kmeans_home.js' %}"
+    ></script>
   </body>
 </html>

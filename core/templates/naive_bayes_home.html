@@ -1,16 +1,48 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Naive Bayes</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'naive_bayes_home.css' %}">
-    <link rel="icon" href="{% static 'machine_learning_icon.png' %}">
+    <link rel="stylesheet" href="{% static 'styles/naive_bayes_home.css' %}" />
+    <link rel="icon" href="{% static 'assets/machine_learning_icon.png' %}" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
   </head>
   <body>
     <h1>Naive Bayes Classifier</h1>
+    <h2>
+      Naive Bayes Classifier is a very popular supervised machine learning
+      algorithm based on Bayes’ theorem.
+    </h2>
+    <br />
+    <div class="settings">
+      <div class="line-chart">
+        <div class="aspect-ratio">
+          <h3>True Values</h3>
+          <br />
+          <canvas id="temp-gradient-true-chart"></canvas>
+        </div>
+      </div>
+        <div class="line-chart">
+          <div class="aspect-ratio">
+            <h3>Predicted Values</h3>
+            <br />
+            <canvas id="temp-gradient-predict-chart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+    <div class="settings">
+    <button id="all">Predict All Classes</button>
+    <button id="versicolor">Predict Versicolor Class</button>
+    <button id="setosa">Predict Setosa Class</button>
+    <button id="virginica">Predict Virginica Class</button>
+    </div>
 
-
-    <script type="text/javascript" src="{% static 'naive_bayes_home.js' %}"></script>
+    <script
+      type="text/javascript"
+      src="{% static 'js/naive_bayes_home.js' %}"
+    ></script>
   </body>
 </html>
