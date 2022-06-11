@@ -1,5 +1,4 @@
 import json
-
 import numpy as np
 import plotly.express as px
 from django.shortcuts import render
@@ -14,13 +13,13 @@ def pca(request):
         n_components = int(output_dict["n_components"])
         df = px.data.iris()
         features = ["sepal_length", "sepal_width", "petal_length", "petal_width"]
-        X = df[features]
+        x = df[features]
 
-        pca = PCA(n_components=n_components)
-        components = pca.fit_transform(X)
+        pca_alg = PCA(n_components=n_components)
+        components = pca_alg.fit_transform(x)
 
         if n_components == 2:
-            loadings = pca.components_.T * np.sqrt(pca.explained_variance_)
+            loadings = pca_alg.components_.T * np.sqrt(pca_alg.explained_variance_)
 
             fig = px.scatter(components, x=0, y=1, color=df["species"])
 
@@ -40,7 +39,7 @@ def pca(request):
             fig.show()
 
         if n_components == 3:
-            total_var = pca.explained_variance_ratio_.sum() * 100
+            total_var = pca_alg.explained_variance_ratio_.sum() * 100
             fig = px.scatter_3d(
                 components,
                 x=0,
