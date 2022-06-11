@@ -2,25 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9775237-8162-4f92-aa4f-70e92417391c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/algorithms/principal_components_analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/algorithms/principal_components_analysis.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/algorithms/support_vectors_machines.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/algorithms/support_vectors_machines.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/templates/mle_home.html" beforeDir="false" afterPath="$PROJECT_DIR$/core/templates/mle_home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/templates/pca_home.html" beforeDir="false" afterPath="$PROJECT_DIR$/core/templates/pca_home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/templates/svm_home.html" beforeDir="false" afterPath="$PROJECT_DIR$/core/templates/svm_home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/views/lda.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/views/lda.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/views/mle.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/views/mle.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/views/naive_bayes.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/views/naive_bayes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/views/pca.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/views/pca.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/views/svm.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/views/svm.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/setup/.env" beforeDir="false" afterPath="$PROJECT_DIR$/setup/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/mle_home.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/mle_home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/naive_bayes_home.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/naive_bayes_home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/pca_home.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/pca_home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/svm_home.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/svm_home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/styles/pca_home.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/styles/pca_home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/styles/svm_home.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/styles/svm_home.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,6 +172,8 @@
       <workItem from="1654761443255" duration="161000" />
       <workItem from="1654792331049" duration="308000" />
       <workItem from="1654864478716" duration="2276000" />
+      <workItem from="1654948026253" duration="618000" />
+      <workItem from="1654949228428" duration="19000" />
     </task>
     <servers />
   </component>
