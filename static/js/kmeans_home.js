@@ -11,9 +11,9 @@ const svg = d3.select(".kmeans")
         kmeans.step();
     });
 
-const lineg = svg.append('g');
-const dotg = svg.append('g');
-const centerg = svg.append('g');
+const line_g = svg.append('g');
+const dot_g = svg.append('g');
+const center_g = svg.append('g');
 
 class Coord {
     constructor(x = Math.random() * WIDTH, y = Math.random() * HEIGHT) {
@@ -68,7 +68,7 @@ class Dot extends Coord {
 
 class LineDrawer {
     constructor(dots) {
-        this.lines = lineg.selectAll('line').data(dots);
+        this.lines = line_g.selectAll('line').data(dots);
         this.duration = DURATION;
     }
 
@@ -93,14 +93,14 @@ class LineDrawer {
     }
 
     clear() {
-        lineg.selectAll('line').remove();
+        line_g.selectAll('line').remove();
     }
 }
 
 class CircleDrawer {
     constructor(dots) {
-        dotg.selectAll('circle').data(dots).enter().append('circle');
-        this.circles = dotg.selectAll('circle').data(dots);
+        dot_g.selectAll('circle').data(dots).enter().append('circle');
+        this.circles = dot_g.selectAll('circle').data(dots);
         this.duration = DURATION;
     }
 
@@ -118,7 +118,7 @@ class CircleDrawer {
 
 class CenterDrawer {
     constructor(groups) {
-        this.centers = centerg.selectAll('path').data(groups);
+        this.centers = center_g.selectAll('path').data(groups);
         this.color = '#aabbcc';
         this.duration = DURATION;
     }
