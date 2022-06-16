@@ -2,7 +2,7 @@
 function SVM(X, y, C, tolerance, max_passes, gamma) {
     // Performs the SVM algorithm to determine Lagrange Multipliers for a SVM
 
-    let n = X.length, // Size of Data
+    var n = X.length, // Size of Data
         a = [],          // Lagrange Multipliers
         E = [],			 // Expected Values
         b = 0.0,	     // Threshold
@@ -10,21 +10,21 @@ function SVM(X, y, C, tolerance, max_passes, gamma) {
         num_changed_alphas = 0;
 
     //initialize lagrange multipliers
-    for (let i = n - 1; i >= 0; i--) {
+    for (var i = n - 1; i >= 0; i--) {
         a[i] = 0.0;
         E[i] = 0.0;
-    }
+    };
 
     while (passes < max_passes) {
         num_changed_alphas = 0;
 
         //Calculate Ei = f(x_i) - y_i
-        for (let i = n - 1; i >= 0; i--) {
+        for (var i = n - 1; i >= 0; i--) {
 
             E[i] = b - y[i];
-            for (let j = n - 1; j >= 0; j--) {
+            for (var j = n - 1; j >= 0; j--) {
                 E[i] += (y[j] * a[j] * RBF(X[i], X[j], gamma));
-            }
+            };
 
             if ((y[i] * E[i] < -tolerance && a[i] < C) || (y[i] * E[i] > tolerance && a[i] > 0)) {
                 //Select j != i Randomly
@@ -32,34 +32,34 @@ function SVM(X, y, C, tolerance, max_passes, gamma) {
                 do {
                     j = Math.floor(Math.random() * n);
                 }
-                while (j === i);
+                while (j == i);
 
                 //Calculate Ej = f(x_j) - y_j
                 E[j] = b - y[j];
-                for (let k = n - 1; k >= 0; k--) {
+                for (var k = n - 1; k >= 0; k--) {
                     E[j] += (y[k] * a[k] *
                         RBF(X[j], X[k], gamma));
-                }
+                };
 
-                let alpha_old_i = a[i],
+                var alpha_old_i = a[i],
                     alpha_old_j = a[j];
 
                 //Compute L and H by 10 or 11
-                if (y[i] !== y[j]) {
-                    let L = Math.max(0, a[j] - a[i]);
-                    let H = Math.min(C, C + a[j] - a[i]);
+                if (y[i] != y[j]) {
+                    var L = Math.max(0, a[j] - a[i]);
+                    var H = Math.min(C, C + a[j] - a[i]);
                 }
                 else {
-                    let L = Math.max(0, a[i] + a[j] - C);
-                    let H = Math.min(C, a[j] + a[i]);
+                    var L = Math.max(0, a[i] + a[j] - C);
+                    var H = Math.min(C, a[j] + a[i]);
                 }
 
-                if (L === H) {
+                if (L == H) {
                     continue;
                 }
 
                 //Compute nen by 14
-                let nen = 2 * RBF(X[i], X[j], gamma) -
+                var nen = 2 * RBF(X[i], X[j], gamma) -
                     RBF(X[i], X[i], gamma) -
                     RBF(X[j], X[j], gamma);
 
@@ -87,11 +87,11 @@ function SVM(X, y, C, tolerance, max_passes, gamma) {
 
 
                 //Compute b1 and b2 with 17 and 18
-                let b1 = b - E[i] - y[i] * (a[i] - alpha_old_i) *
+                var b1 = b - E[i] - y[i] * (a[i] - alpha_old_i) *
                     RBF(X[i], X[i], gamma) - y[j] *
                     (a[j] - alpha_old_j) * RBF(X[i], X[j], gamma);
 
-                let b2 = b - E[j] - y[i] * (a[i] - alpha_old_i) *
+                var b2 = b - E[j] - y[i] * (a[i] - alpha_old_i) *
                     RBF(X[i], X[j], gamma) - y[j] *
                     (a[j] - alpha_old_j) * RBF(X[j], X[j], gamma);
 
@@ -106,60 +106,60 @@ function SVM(X, y, C, tolerance, max_passes, gamma) {
                     b = (b1 + b2) / 2;
                 }
                 num_changed_alphas += 1;
-            }
-        }
-        if (num_changed_alphas === 0) {
+            };
+        };
+        if (num_changed_alphas == 0) {
             passes += 1;
         }
         else {
             passes = 0;
         }
-    }
+    };
 
-    let w = [[]];
-    for (let i = X[0].length - 1; i >= 0; i--) {
+    var w = [[]];
+    for (var i = X[0].length - 1; i >= 0; i--) {
         w[0][i] = 0;
-    }
-    for (let i = n - 1; i >= 0; i--) {
-        for (let j = X[0].length - 1; j >= 0; j--) {
+    };
+    for (var i = n - 1; i >= 0; i--) {
+        for (var j = X[0].length - 1; j >= 0; j--) {
             w[0][j] += a[i] * X[i][j] * y[i];
-        }
-    }
+        };
+    };
     return { 'w': w, 'b': b };
 }
 
 function RBF(a, b, gamma) {
-    let d = 0.0;
+    var d = 0.0;
 
-    for (let i = a.length - 1; i >= 0; i--) {
+    for (var i = a.length - 1; i >= 0; i--) {
         d += a[i] * b[i]
-    }
+    };
     return d;
 }
 
-let margin = { top: 80, right: 180, bottom: 80, left: 180 },
+var margin = { top: 80, right: 180, bottom: 80, left: 180 },
     width = 960 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
-let svg = d3.select(".svm").append("svg")
+var svg = d3.select(".svm").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
     .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-let y = d3.scaleLinear()
+var y = d3.scaleLinear()
     .domain([0, 10])
     .range([height, 0]);
 
-let x = d3.scaleLinear()
+var x = d3.scaleLinear()
     .domain([0, 10])
     .range([0, width])
 
-let xAxis = d3.axisBottom().scale(x);
+var xAxis = d3.axisBottom().scale(x);
 
-let yAxis = d3.axisLeft().scale(y);
+var yAxis = d3.axisLeft().scale(y);
 
-let line = d3.line()
+var line = d3.line()
     .x(function (d) { return x(d.x); })
     .y(function (d) { return y(d.y); });
 
@@ -213,33 +213,33 @@ class SVMVisualization {
     }
 
     visualize() {
-        let X = [],
+        var X = [],
             Y = [];
 
-        for (let i = this.initialDots.length - 1; i >= 0; i--) {
+        for (var i = this.initialDots.length - 1; i >= 0; i--) {
             X[i] = [+this.initialDots[i].x, +this.initialDots[i].y];
             Y[i] = +this.initialDots[i].c;
-        }
+        };
         console.log("X", X)
         console.log("Y", Y)
 
 
-        let V = SVM(X, Y, this.c, 0.000001, 30, -1);
-        let w = V.w[0],
+        var V = SVM(X, Y, this.c, 0.000001, 30, -1);
+        var w = V.w[0],
             b = V.b;
 
-        let decision = [];
-        for (let i = 0; i < 1000; i++) {
+        var decision = [];
+        for (var i = 0; i < 1000; i++) {
             decision[i] = { 'x': i / 100, 'y': (-w[0] / w[1]) * (i / 100) - (b / w[1]) };
         }
-        let pg = [];
-        for (let i = 0; i < 1000; i++) {
+        var pg = [];
+        for (var i = 0; i < 1000; i++) {
             pg[i] = { 'x': i / 100, 'y': (-w[0] / w[1]) * (i / 100) - ((1 + b) / w[1]) };
         }
 
 
-        let ng = [];
-        for (let i = 0; i < 1000; i++) {
+        var ng = [];
+        for (var i = 0; i < 1000; i++) {
             ng[i] = { 'x': i / 100, 'y': (-w[0] / w[1]) * (i / 100) - ((-1 + b) / w[1]) };
         }
 
@@ -306,7 +306,7 @@ class SVMVisualization {
                 return y(+d.y)
             })
             .style("fill", function (d) {
-                if (d.c === 1) {
+                if (d.c == 1) {
                     return "#377eb8";
                 } else {
                     return "#e41a1c";
@@ -336,6 +336,6 @@ class SVMVisualization {
     }
 }
 
-let svm = new SVMVisualization();
+var svm = new SVMVisualization();
 svm.appendInitialDots();
 svm.run();
