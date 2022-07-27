@@ -174,7 +174,7 @@ class LDA {
             .attr("r", 3)
             .style("fill", "#fde725ff");
 
-        for (let i = 0; i < lines.length; i++) {
+        for (var i = 0; i < lines.length; i++) {
             console.log("***", lines[i]);
             svg.append("path")
                 .datum(lines[i])

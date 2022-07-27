@@ -139,7 +139,7 @@ class NaiveBayes {
         this.virginica = data["virginica"];
         this.accuracy = data["accuracy"];
     }
-}
+};
 
 let naiveBayes = new NaiveBayes();
 naiveBayes.predict();
