@@ -8,15 +8,6 @@ class NaiveBayes:
     P(y|X) = P(X|y) * P(y) / P(X)
     """
 
-    def __init__(self):
-        self.prior = None
-        self.mean = None
-        self.var = None
-        self.classes = None
-        self.count = None
-        self.feature_nums = None
-        self.rows = None
-
     def calc_prior(self, features, target):
         """Calculates prior probabilities P(y)"""
         self.prior = (
@@ -36,8 +27,7 @@ class NaiveBayes:
         We assume that probability of specific target value given specific class is normally distributed
 
         probability density function derived from wikipedia:
-        (1/√2pi*σ) * exp((-1/2)*((x-μ)^2)/(2*σ²)), where μ is mean, σ² is variance, σ is quare root of variance
-        (standard deviation)
+        (1/√2pi*σ) * exp((-1/2)*((x-μ)^2)/(2*σ²)), where μ is mean, σ² is variance, σ is quare root of variance (standard deviation)
         """
         mean = self.mean[class_idx]
         var = self.var[class_idx]
@@ -52,13 +42,13 @@ class NaiveBayes:
         for i in range(self.count):
             prior = np.log(
                 self.prior[i]
-            )  # use the log to make it more numerically stable
+            )  ## use the log to make it more numerically stable
             conditional = np.sum(
                 np.log(self.gaussian_density(i, x))
             )  # use the log to make it more numerically stable
             posterior = prior + conditional
             posteriors.append(posterior)
-        # return class with the highest posterior probability
+        # return class with highest posterior probability
         return self.classes[np.argmax(posteriors)]
 
     def fit(self, features, target):
@@ -80,8 +70,5 @@ class NaiveBayes:
 
     def get_formatted_predicted_values(self, y_pred, target):
         pr = pd.DataFrame(data=y_pred, columns=[target])
-        predicted_list = pr.value_counts(dropna=False).tolist()
-        predicted_versicolor = predicted_list[0]
-        predicted_setosa = predicted_list[1]
-        predicted_virginica = predicted_list[2]
-        return predicted_versicolor, predicted_setosa, predicted_virginica
+        predicted_dict = pr.value_counts(dropna=False).to_dict()
+        return predicted_dict

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Choose PCA Type</title>
+    {% load static %}
+    <link rel="icon" href="{% static 'assets/machine_learning_icon.png' %}" />
+    <link rel="stylesheet" href="{% static 'styles/choose_model.css' %}" />
+  </head>
+  <body>
+    <form>
+      <input type="button" value="&#8592;" onclick="history.go(-1)" />
+    </form>
+    <h1>Choose PCA Model Type</h1>
+    <h2></h2>
+    <div class="settings">
+      <div class="wide-group">
+        <button class="btn-style">
+          <a href="/pca" class="link">Use Default Dataset</a>
+        </button>
+      </div>
+      <div class="wide-group">
+        <button class="btn-style">
+          <a href="/custom_pca" class="link">Use Own Dataset</a>
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

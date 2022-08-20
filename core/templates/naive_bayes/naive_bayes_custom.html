@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Naive Bayes</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles/naive_bayes_home.css' %}" />
+    <link rel="icon" href="{% static 'assets/machine_learning_icon.png' %}" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+  </head>
+  <body>
+    <form>
+      <input type="button" value="&#8592;" onclick="history.go(-2)">
+     </form>
+    <h1>Naive Bayes Classifier</h1>
+    <h2>
+      Naive Bayes Classifier is a very popular supervised machine learning
+      algorithm based on Bayes’ theorem.
+    </h2>
+    <br />
+    <form
+      action=""
+      method="POST"
+      enctype="multipart/form-data"
+      class="form-style"
+    >
+      {% csrf_token %}
+      <label for="file1" class="upload-label"><b>Choose a File:</b></label>
+      <input type="file" id="file1" name="file" accept=".csv, .txt" />
+      <button type="submit" class="upload-btn">Upload</button>
+      <br />
+      {% if messages %} {% for message in messages %}
+      <div>
+        <strong class="error-msg">{{message|safe}}</strong>
+      </div>
+      {% endfor %} {% endif %}
+    </form>
+
+    {% if column_headers %}
+    <div class="settings">
+      <form action="" class="form-style">
+        <p><b class="margin-left">Please select target column to predict: </b></p>
+        {% for column_header in column_headers %}
+        <input
+          value="{{ column_header }}"
+          class="btn-style"
+          id="submit-type-btn"
+          type="button"
+          onClick='chooseType("{{ column_header }}")'
+        />
+        {% endfor %}
+      </form>
+    </div>
+    {% endif %}
+    <div class="settings">
+      <div class="line-chart">
+        <div class="aspect-ratio">
+          <h3 id="trueValues"></h3>
+          <br />
+          <canvas id="temp-gradient-true-chart"></canvas>
+        </div>
+      </div>
+      <p><b id="accuracy"></b></p>
+        <div class="line-chart">
+          <div class="aspect-ratio">
+            <h3 id="predictedValues"></h3>
+            <br />
+            <canvas id="temp-gradient-predict-chart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      type="text/javascript"
+      src="{% static 'js/naive_bayes/naive_bayes_custom.js' %}"
+    ></script>
+  </body>
+</html>

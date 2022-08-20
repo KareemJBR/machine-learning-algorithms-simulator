@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>LDA</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles/lda_home.css' %}" />
+    <link rel="icon" href="{% static 'assets/machine_learning_icon.png' %}" />
+    <script src="https://d3js.org/d3.v4.js"></script>
+  </head>
+  <body>
+    <form>
+      <input type="button" value="&#8592;" onclick="history.go(-1)" />
+    </form>
+    <h1>Linear Discriminant Analysis (LDA)</h1>
+    <h3>
+      This interactive demo lets you explore the LDA algorithm that is used for
+      modelling differences in groups.
+    </h3>
+    <br />
+    <form
+      action=""
+      method="POST"
+      enctype="multipart/form-data"
+      class="form-style"
+    >
+      {% csrf_token %}
+      <label for="file1" class="upload-label"><b>Choose a File:</b></label>
+      <input type="file" id="file1" name="file" accept=".csv, .txt" />
+      <button type="submit" class="upload">Upload</button>
+      <br />
+      {% if messages %} {% for message in messages %}
+      <div>
+        <strong class="error-msg">{{message|safe}}</strong>
+      </div>
+      {% endfor %} {% endif %}
+    </form>
+
+    {% if column_headers %}
+    <div class="settings">
+      <form action="" class="form-style">
+        {% csrf_token %}
+        <p>
+          <b class="margin-left">Please select target column: </b>
+        </p>
+        {% for column_header in column_headers %}
+        <input
+          value="{{ column_header }}"
+          class="btn-style"
+          id="submit-type-btn"
+          type="button"
+          onClick='chooseTarget("{{ column_header }}")'
+        />
+        {% endfor %}
+      </form>
+    </div>
+    {% endif %}
+
+    <p id="error" class="repr-err-msg"></p>
+    <img id="custom-lda" src="" />
+
+    <script
+      type="text/javascript"
+      src="{% static 'js/lda/lda_custom.js' %}"
+    ></script>
+  </body>
+</html>

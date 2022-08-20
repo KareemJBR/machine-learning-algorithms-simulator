@@ -18,11 +18,11 @@
     <h2>that is used to solve the clustering problems.</h2>
     <div class="settings">
       <div class="group">
-        <label for="n">N (Number of Points): <span id="n-pl">100</span></label>
-        <input type="range" id="n" min="2" max="1000" value="100" />
+        <label for="k">K (Number of Clusters): <span id="k-pl">2</span></label>
+        <input type="range" id="k" min="2" max="50" value="2" />
       </div>
       <div class="wide-group">
-        <button class="step">Step</button>
+        <button class="step">Run</button>
       </div>
       <div class="wide-group">
         <button class="restart" disabled="true">Restart</button>
@@ -30,17 +30,13 @@
       <div class="wide-group">
         <button class="reset">Reset</button>
       </div>
-      <div class="group">
-        <label for="k">K (Number of Clusters): <span id="k-pl">5</span></label>
-        <input type="range" id="k" min="2" max="50" value="5" />
-      </div>
     </div>
     <br />
     <svg class="kmeans"></svg>
 
     <script
       type="text/javascript"
-      src="{% static 'js/kmeans_home.js' %}"
+      src="{% static 'js/kmeans/custom_kmeans.js' %}"
     ></script>
   </body>
 </html>

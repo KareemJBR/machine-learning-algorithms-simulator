@@ -2,10 +2,10 @@
 
 from .dfs import dfs
 from .index import index
-from .kmeans import kmeans
+from .kmeans import choose_kmeans, kmeans, kmeans_custom
 from .knn import knn
-from .lda import lda
+from .lda import choose_lda, lda, lda_custom
 from .mle import mle
-from .naive_bayes import naive_bayes
-from .pca import pca
+from .naive_bayes import choose_naive_bayes, naive_bayes, naive_bayes_custom
+from .pca import choose_pca, pca, pca_custom
 from .svm import svm

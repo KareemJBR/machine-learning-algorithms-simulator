@@ -2,8 +2,68 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9775237-8162-4f92-aa4f-70e92417391c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/core/templates/kmeans/choose_kmeans.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/templates/kmeans/kmeans_custom.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/templates/kmeans/kmeans_home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/templates/knn.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/templates/lda/choose_lda.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/templates/lda/lda_custom.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/templates/lda/lda_home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/templates/naive_bayes/choose_naive_bayes.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/templates/naive_bayes/naive_bayes_custom.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/templates/naive_bayes/naive_bayes_home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/templates/pca/choose_pca.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/templates/pca/pca_custom.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/templates/pca/pca_home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/utils/clean_folder.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/utils/upload_file.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/kmeans/custom_kmeans.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/kmeans/kmeans_home.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/knn.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lda/lda_custom.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/lda/lda_home.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/naive_bayes/naive_bayes_custom.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/naive_bayes/naive_bayes_home.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/pca/pca_custom.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/pca/pca_home.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/styles/choose_model.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temporary_file_folder/user_file.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/algorithms/k_means.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/algorithms/k_means.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/algorithms/k_nearest_neighbors.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/algorithms/k_nearest_neighbors.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/algorithms/linear_discriminant_analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/algorithms/linear_discriminant_analysis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/algorithms/naive_bayes_classifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/algorithms/naive_bayes_classifier.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/algorithms/principal_components_analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/algorithms/principal_components_analysis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/algorithms/support_vectors_machines.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/algorithms/support_vectors_machines.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/core/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/templates/kmeans_home.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/templates/lda_home.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/templates/naive_bayes_home.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/templates/pca_home.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/utils/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/utils/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/views/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/views/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/views/kmeans.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/views/kmeans.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/views/knn.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/views/knn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/views/lda.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/views/lda.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/views/mle.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/views/mle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/views/naive_bayes.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/views/naive_bayes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/views/pca.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/views/pca.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/views/svm.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/views/svm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup/.env" beforeDir="false" afterPath="$PROJECT_DIR$/setup/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/pca3n.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/kmeans_home.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/lda_home.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/naive_bayes_home.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/pca_home.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/styles/lda_home.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/styles/lda_home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/styles/naive_bayes_home.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/styles/naive_bayes_home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/styles/pca_home.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/styles/pca_home.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,17 +112,11 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Deep-Rectangling" />
-    <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
-    <property name="vue.rearranger.settings.migration" value="true" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "false"
+  }
+}]]></component>
   <component name="RunManager">
     <configuration name="views" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="machine-learning-algorithms-simulator" />
@@ -86,6 +140,11 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.views" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -152,36 +211,7 @@
       <workItem from="1649832000675" duration="1163000" />
       <workItem from="1652431679374" duration="262000" />
       <workItem from="1652566189440" duration="61000" />
-      <workItem from="1652874507380" duration="276000" />
-      <workItem from="1652875257072" duration="122000" />
-      <workItem from="1652983345845" duration="130000" />
-      <workItem from="1653223401067" duration="56000" />
-      <workItem from="1653264553013" duration="239000" />
-      <workItem from="1653526295905" duration="62000" />
-      <workItem from="1654549001797" duration="234000" />
-      <workItem from="1654551594534" duration="25000" />
-      <workItem from="1654682619670" duration="37000" />
-      <workItem from="1654685059570" duration="546000" />
-      <workItem from="1654758005653" duration="151000" />
-      <workItem from="1654760563765" duration="16000" />
-      <workItem from="1654761443255" duration="161000" />
-      <workItem from="1654792331049" duration="308000" />
-      <workItem from="1654864478716" duration="2276000" />
-      <workItem from="1654948026253" duration="618000" />
-      <workItem from="1654949228428" duration="19000" />
-      <workItem from="1654951257150" duration="14000" />
-      <workItem from="1654993580172" duration="1314000" />
-      <workItem from="1655410537889" duration="81000" />
-      <workItem from="1655414772047" duration="213000" />
-      <workItem from="1655419226306" duration="96000" />
-      <workItem from="1656615799876" duration="22000" />
-      <workItem from="1657709850848" duration="2842000" />
-      <workItem from="1657817134404" duration="303000" />
-      <workItem from="1658578943817" duration="2123000" />
-      <workItem from="1658583713271" duration="1000" />
-      <workItem from="1658583756302" duration="18000" />
-      <workItem from="1658875698603" duration="29000" />
-      <workItem from="1658930354810" duration="105000" />
+      <workItem from="1660990223452" duration="29000" />
     </task>
     <servers />
   </component>
@@ -201,5 +231,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/principal_components_analysis_py$views.coverage" NAME="views Coverage Results" MODIFIED="1647298299837" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mysite/mysite" />
   </component>
 </project>

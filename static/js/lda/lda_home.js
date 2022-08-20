@@ -110,7 +110,7 @@ class LDA {
             body: JSON.stringify(data)
         })
             .then((resp) => { return resp.json() })
-
+        console.log("RES", result)
         // set first class
         const firstGroup = result["data"][0]
         const firstX = firstGroup["x"]
@@ -175,7 +175,7 @@ class LDA {
             .style("fill", "#fde725ff");
 
         for (var i = 0; i < lines.length; i++) {
-            console.log("***", lines[i]);
+            // console.log("***", lines[i]);
             svg.append("path")
                 .datum(lines[i])
                 .attr("fill", "none")

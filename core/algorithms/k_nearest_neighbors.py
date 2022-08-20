@@ -1,5 +1,7 @@
+from collections import Counter  # TODO: might need to implement it myself
+
 import numpy as np
-from collections import Counter
+
 from core.utils import euclidean_distance
 
 

@@ -16,6 +16,7 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+TEMPORARY_FILE_DIR = f"{BASE_DIR}/temporary_file_folder"
 
 # Initialise environment variables
 env = environ.Env()

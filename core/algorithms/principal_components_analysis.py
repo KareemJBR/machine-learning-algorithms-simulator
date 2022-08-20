@@ -22,7 +22,7 @@ class PCA:
 
         eigenvector_subset = sorted_eigenvectors[:, 0 : self.n_components]
 
-        x_reduced = np.dot(
+        X_reduced = np.dot(
             eigenvector_subset.transpose(), self.mean.transpose()
         ).transpose()
-        return x_reduced
+        return X_reduced

@@ -1,6 +1,8 @@
 import json
+
 import numpy as np
 from django.shortcuts import render
+
 from core.algorithms import KNN
 
 
@@ -20,10 +22,10 @@ def knn(request):
         train_points = np.asarray(list(np.asarray(zip(train_x, train_y))))
 
         train_labels = np.asarray([x for x in output_dict["train_classes"]])
-        k_nn = KNN(k=output_dict["k"])
+        knn = KNN(k=output_dict["k"])
 
-        k_nn.fit(train_points, train_labels)
-        predictions = k_nn.predict(test_points)
+        knn.fit(train_points, train_labels)
+        predictions = knn.predict(test_points)
 
         return render(
             request,

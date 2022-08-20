@@ -57,3 +57,28 @@ button {
   border-radius: 5px;
   margin-left: 30px;
 }
+
+.form-style {
+  display: flex;
+  justify-content: center;
+  padding-top: 1%;
+}
+
+.upload-label {
+  padding-right: 1%;
+}
+
+.btn-style {
+  margin-bottom: 1%;
+}
+
+.upload-desc {
+  padding-top: 0.3%;
+}
+
+.error-msg {
+  color: red;
+  text-align: center;
+  padding-left: 50px;
+  padding-top: 50px;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>KNN</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles/knn_home.css' %}" />
+    <link rel="icon" href="{% static 'assets/machine_learning_icon.png' %}" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.5.0/d3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-queue/3.0.3/d3-queue.js"></script>
+    <link
+      href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    canvas {
+      cursor: pointer;
+    }
+    .instructions {
+      font-size: 14pt;
+    }
+  </style>
+  <body>
+    <h1>K-Nearest Neighbor (KNN)</h1>
+    <h3>
+      This interactive demo lets you explore the K-Nearest Neighbors algorithm
+      for classification.
+    </h3>
+    <h3>
+      Click on the grey area to create new points and see how their color
+      changes based on their neighbors.
+    </h3>
+    <div class="settings">
+      <span class="group">
+        <label for="k">Amount of neighbors: <span id="k-pl">1</span></label>
+        <input type="range" id="k" min="1" max="150" value="1" step="1" />
+      </span>
+      <span class="group">
+        <label for="n"
+          >Initial amount of points: <span id="n-pl">10</span></label
+        >
+        <input
+          type="range"
+          id="n"
+          name="n"
+          min="10"
+          max="5000"
+          value="200"
+          step="10"
+        />
+      </span>
+    </div>
+    <svg class="knn"></svg>
+
+    <script type="text/javascript" src="{% static 'js/knn.js' %}"></script>
+  </body>
+</html>
