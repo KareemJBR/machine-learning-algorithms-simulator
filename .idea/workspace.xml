@@ -2,63 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9775237-8162-4f92-aa4f-70e92417391c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Dataset examples/LDA/LDA – WRONG DATASET.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dataset examples/LDA/LDA.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dataset examples/LDA/iris.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dataset examples/LDA/lda-big.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dataset examples/LDA/lda-small.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dataset examples/MLE/iris.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dataset examples/MLE/mle.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dataset examples/NaiveBayes/NaiveBayes.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dataset examples/NaiveBayes/NaiveBayes2.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dataset examples/NaiveBayes/iris.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dataset examples/PCA/2 components/PCA.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dataset examples/PCA/2 components/dataset2D_example.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dataset examples/PCA/2 components/datasetCSV2D.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dataset examples/PCA/3 components/dataset3D_example.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dataset examples/PCA/3 components/datasetCSV3D.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/templates/mle/choose_mle.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/templates/mle/mle_custom.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/templates/mle/mle_home.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/mle/mle_custom.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/mle/mle_home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dataset examples/LDA.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dataset examples/NaiveBayes.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dataset examples/PCA.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dataset examples/dataset2D_example.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dataset examples/dataset3D_example.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dataset examples/datasetCSV2D.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dataset examples/datasetCSV3D.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dataset examples/iris.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dataset examples/lda-big.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/core/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/templates/kmeans/kmeans_custom.html" beforeDir="false" afterPath="$PROJECT_DIR$/core/templates/kmeans/kmeans_custom.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/templates/kmeans/kmeans_home.html" beforeDir="false" afterPath="$PROJECT_DIR$/core/templates/kmeans/kmeans_home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/templates/lda/lda_custom.html" beforeDir="false" afterPath="$PROJECT_DIR$/core/templates/lda/lda_custom.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/templates/mle_home.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/templates/naive_bayes/choose_naive_bayes.html" beforeDir="false" afterPath="$PROJECT_DIR$/core/templates/naive_bayes/choose_naive_bayes.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/templates/naive_bayes/naive_bayes_custom.html" beforeDir="false" afterPath="$PROJECT_DIR$/core/templates/naive_bayes/naive_bayes_custom.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/templates/naive_bayes/naive_bayes_home.html" beforeDir="false" afterPath="$PROJECT_DIR$/core/templates/naive_bayes/naive_bayes_home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/templates/pca/pca_custom.html" beforeDir="false" afterPath="$PROJECT_DIR$/core/templates/pca/pca_custom.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/templates/pca/pca_home.html" beforeDir="false" afterPath="$PROJECT_DIR$/core/templates/pca/pca_home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/views/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/views/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/views/lda.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/views/lda.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/views/mle.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/views/mle.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/views/pca.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/views/pca.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/kmeans/custom_kmeans.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/kmeans/custom_kmeans.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/lda/lda_custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/lda/lda_custom.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/mle_home.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/naive_bayes/naive_bayes_custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/naive_bayes/naive_bayes_custom.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/pca/pca_custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/pca/pca_custom.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/styles/kmeans_home.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/styles/kmeans_home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/styles/lda_home.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/styles/lda_home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/styles/mle_home.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/styles/mle_home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/styles/naive_bayes_home.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/styles/naive_bayes_home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/styles/pca_home.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/styles/pca_home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/temporary_file_folder/user_file.csv" beforeDir="false" afterPath="$PROJECT_DIR$/temporary_file_folder/user_file.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dataset examples/LDA/LDA – WRONG DATASET.csv" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -206,7 +151,7 @@
       <workItem from="1649832000675" duration="1163000" />
       <workItem from="1652431679374" duration="262000" />
       <workItem from="1652566189440" duration="61000" />
-      <workItem from="1661643115258" duration="25000" />
+      <workItem from="1661643115258" duration="1004000" />
     </task>
     <servers />
   </component>
