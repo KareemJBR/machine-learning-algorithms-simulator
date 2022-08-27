@@ -94,3 +94,17 @@ function chooseType(type) {
     console.log("TYPE", naiveBayes.type);
     naiveBayes.predict();
 };
+
+function showFileType(fileInput) {
+    const files = fileInput.files;
+    for (const i = 0; i < files.length; i++) {
+        const name = files[i].name;
+        const type = files[i].type;
+        if (type !== "text/csv" && type !== "text/plain") {
+            document.getElementById('upload-file').disabled = true;
+            alert("Invalid file format! Please upload the file of .csv or .txt format.");
+        } else {
+            document.getElementById('upload-file').disabled = false;
+        }
+    }
+};

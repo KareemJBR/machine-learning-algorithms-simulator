@@ -13,10 +13,130 @@
       <input type="button" value="&#8592;" onclick="history.go(-1)" />
     </form>
     <h1>Linear Discriminant Analysis (LDA)</h1>
-    <h3>
+    <h2>
       This interactive demo lets you explore the LDA algorithm that is used for
       modelling differences in groups.
-    </h3>
+    </h2>
+    <p class="desc">
+      Upload the <b>.csv</b> or <b>.txt</b> file. The file must contain at least
+      <b>1 column</b> that divides the data into
+      <b>3 or more classes</b> (categorical or numerical). <br />
+      Each class must be represented by at least <b>3</b> rows. The minimum
+      number of rows in the dataset is <b>9</b>. See below for sample datasets
+      to upload:
+    </p>
+    <div class="settings">
+      <div id="table1">
+        <h4>Example of dataset with numerical target column Type</h4>
+        <table style="width: 100%">
+          <tr>
+            <th>X</th>
+            <th>Y</th>
+            <th>Type</th>
+          </tr>
+          <tr style="text-align: center">
+            <td>-1</td>
+            <td>-1</td>
+            <td>1</td>
+          </tr>
+          <tr style="text-align: center">
+            <td>-2</td>
+            <td>-1</td>
+            <td>1</td>
+          </tr>
+          <tr style="text-align: center">
+            <td>-3</td>
+            <td>-2</td>
+            <td>1</td>
+          </tr>
+          <tr style="text-align: center">
+            <td>1</td>
+            <td>1</td>
+            <td>2</td>
+          </tr>
+          <tr style="text-align: center">
+            <td>2</td>
+            <td>1</td>
+            <td>2</td>
+          </tr>
+          <tr style="text-align: center">
+            <td>3</td>
+            <td>2</td>
+            <td>2</td>
+          </tr>
+          <tr style="text-align: center">
+            <td>6</td>
+            <td>5</td>
+            <td>3</td>
+          </tr>
+          <tr style="text-align: center">
+            <td>7</td>
+            <td>6</td>
+            <td>3</td>
+          </tr>
+          <tr style="text-align: center">
+            <td>8</td>
+            <td>7</td>
+            <td>3</td>
+          </tr>
+        </table>
+      </div>
+      <div id="table2">
+        <h4>Example of dataset with categorical target column Type</h4>
+        <table style="width: 100%">
+          <tr>
+            <th>X</th>
+            <th>Y</th>
+            <th>Type</th>
+          </tr>
+          <tr style="text-align: center">
+            <td>-1</td>
+            <td>-1</td>
+            <td>setosa</td>
+          </tr>
+          <tr style="text-align: center">
+            <td>-2</td>
+            <td>-1</td>
+            <td>setosa</td>
+          </tr>
+          <tr style="text-align: center">
+            <td>-3</td>
+            <td>-2</td>
+            <td>setosa</td>
+          </tr>
+          <tr style="text-align: center">
+            <td>1</td>
+            <td>1</td>
+            <td>versicolor</td>
+          </tr>
+          <tr style="text-align: center">
+            <td>2</td>
+            <td>1</td>
+            <td>versicolor</td>
+          </tr>
+          <tr style="text-align: center">
+            <td>3</td>
+            <td>2</td>
+            <td>versicolor</td>
+          </tr>
+          <tr style="text-align: center">
+            <td>6</td>
+            <td>5</td>
+            <td>virginica</td>
+          </tr>
+          <tr style="text-align: center">
+            <td>7</td>
+            <td>6</td>
+            <td>virginica</td>
+          </tr>
+          <tr style="text-align: center">
+            <td>8</td>
+            <td>7</td>
+            <td>virginica</td>
+          </tr>
+        </table>
+      </div>
+    </div>
     <br />
     <form
       action=""
@@ -25,9 +145,18 @@
       class="form-style"
     >
       {% csrf_token %}
-      <label for="file1" class="upload-label"><b>Choose a File:</b></label>
-      <input type="file" id="file1" name="file" accept=".csv, .txt" />
-      <button type="submit" class="upload">Upload</button>
+      <label for="file1" class="upload-label"
+        ><b>Choose a File (.csv or .txt):</b></label
+      >
+      <input
+        type="file"
+        id="file1"
+        name="file"
+        accept=".csv,.txt"
+        onchange="showFileType(this)"
+        required
+      />
+      <button type="submit" class="upload" id="upload-file">Upload</button>
       <br />
       {% if messages %} {% for message in messages %}
       <div>

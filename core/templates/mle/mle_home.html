@@ -9,6 +9,9 @@
     <script src="https://d3js.org/d3.v4.js"></script>
   </head>
   <body>
+    <form>
+      <input type="button" value="&#8592;" onclick="history.go(-1)" />
+    </form>
     <h1>Maximum Likelihood Estimation (MLE)</h1>
     <h2>
       MLE is a method of estimating the parameters of a model using a set of
@@ -36,6 +39,9 @@
     </div>
     <img id="plot" src="" />
 
-    <script type="text/javascript" src="{% static 'js/mle_home.js' %}"></script>
+    <script
+      type="text/javascript"
+      src="{% static 'js/mle/mle_home.js' %}"
+    ></script>
   </body>
 </html>

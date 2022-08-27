@@ -103,5 +103,9 @@ def lda_custom(request):
             return JsonResponse({"image": image})
         except Exception as e:
             logging.getLogger("error_logger").error("Error: " + repr(e))
-            return JsonResponse({"error": repr(e)})
+            return JsonResponse(
+                {
+                    "error": "The column you selected as the target does not meet the requirements. Please select another column or upload a new dataset."
+                }
+            )
     return render(request, "lda/lda_custom.html")

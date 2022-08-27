@@ -17,7 +17,76 @@
       Naive Bayes Classifier is a very popular supervised machine learning
       algorithm based on Bayes’ theorem.
     </h2>
-    <br />
+    <p class="desc">
+      Upload the <b>.csv</b> or <b>.txt</b> file. The file must contain at least
+      <b>1 column</b> that divides the data into
+      <b>2 or more classes</b> (categorical or numerical). <br />
+      Each class must be represented by at least <b>2</b> rows. See below for sample datasets
+      to upload:
+    </p>
+    <div class="settings">
+      <div id="table1">
+        <h4>Example of dataset with numerical target column Type</h4>
+        <table style="width: 100%">
+          <tr>
+            <th>X</th>
+            <th>Y</th>
+            <th>Type</th>
+          </tr>
+          <tr style="text-align: center">
+            <td>-1</td>
+            <td>-1</td>
+            <td>1</td>
+          </tr>
+          <tr style="text-align: center">
+            <td>-2</td>
+            <td>-1</td>
+            <td>1</td>
+          </tr>
+          <tr style="text-align: center">
+            <td>1</td>
+            <td>1</td>
+            <td>2</td>
+          </tr>
+          <tr style="text-align: center">
+            <td>2</td>
+            <td>1</td>
+            <td>2</td>
+          </tr>
+        </table>
+      </div>
+      <div id="table2">
+        <h4>Example of dataset with categorical target column Type</h4>
+        <table style="width: 100%">
+          <tr>
+            <th>X</th>
+            <th>Y</th>
+            <th>Type</th>
+          </tr>
+          <tr style="text-align: center">
+            <td>-1</td>
+            <td>-1</td>
+            <td>setosa</td>
+          </tr>
+          <tr style="text-align: center">
+            <td>-2</td>
+            <td>-1</td>
+            <td>setosa</td>
+          </tr>
+          <tr style="text-align: center">
+            <td>2</td>
+            <td>1</td>
+            <td>versicolor</td>
+          </tr>
+          <tr style="text-align: center">
+            <td>3</td>
+            <td>2</td>
+            <td>versicolor</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <br \>
     <form
       action=""
       method="POST"
@@ -26,8 +95,8 @@
     >
       {% csrf_token %}
       <label for="file1" class="upload-label"><b>Choose a File:</b></label>
-      <input type="file" id="file1" name="file" accept=".csv, .txt" />
-      <button type="submit" class="upload-btn">Upload</button>
+      <input type="file" id="file1" name="file" accept=".csv,.txt" onchange="showFileType(this)" required/>
+      <button type="submit" class="upload-btn" id="upload-file">Upload</button>
       <br />
       {% if messages %} {% for message in messages %}
       <div>

@@ -1,4 +1,3 @@
-
 class PCA {
     constructor(n) {
         this.n_components = n;
@@ -14,11 +13,32 @@ class PCA {
             },
             body: JSON.stringify(data_dict)
         })
-            .then((resp) => { return resp.json() })
+            .then((resp) => { return resp.json() });
+        if (result["error"]) {
+            console.log("error", result["error"]);
+            document.getElementById('error').textContent = result["error"];
+        } else {
+            document.getElementById('error').textContent = "";
+        }
+
     };
 };
 
 function chooseN(n) {
     let pca = new PCA(n);
     pca.analyze();
+};
+
+function showFileType(fileInput) {
+    const files = fileInput.files;
+    for (const i = 0; i < files.length; i++) {
+        const name = files[i].name;
+        const type = files[i].type;
+        if (type !== "text/csv" && type !== "text/plain") {
+            document.getElementById('upload-file').disabled = true;
+            alert("Invalid file format! Please upload the file of .csv or .txt format.");
+        } else {
+            document.getElementById('upload-file').disabled = false;
+        }
+    }
 };

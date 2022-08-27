@@ -1,13 +1,17 @@
-class LDA {
-    constructor(column) {
-        this.column = column;
+class MLE {
+    constructor() {
+        this.mean = 0;
+        this.std = 0;
+        this.target_column = "";
     }
 
-    async classify() {
+    async analyze_by_column(column) {
+        document.getElementById('plot').src = "";
+        this.target_column = column;
         const data = {
-            target_column: this.column,
+            target_column: column,
         }
-        const result = await fetch("http://127.0.0.1:8000/custom_lda/", {
+        const result = await fetch("http://127.0.0.1:8000/custom_mle/", {
             method: "PUT",
             headers: {
                 'Content-Type': 'application/json',
@@ -17,18 +21,29 @@ class LDA {
             .then((resp) => { return resp.json() })
         if (result["image"]) {
             const image = result["image"];
-            document.getElementById('custom-lda').src = `data:image/png;base64,${image}`;
+            document.getElementById('plot').src = `data:image/png;base64,${image}`;
             document.getElementById('error').textContent = "";
-        } else {
+        }
+        if (result["mean"]) {
+            this.mean = result["mean"];
+            console.log("this.mean", this.mean)
+            document.getElementById('mean').textContent = `μ: ${this.mean}`;
+        }
+        if (result["std"]) {
+            this.std = result["std"];
+            console.log("this.std", this.std)
+            document.getElementById('std').textContent = `σ: ${this.std}`;
+        }
+        if (result["error"]) {
             document.getElementById('error').textContent = `${result["error"]}`;
-            document.getElementById('custom-lda').src = "";
+            document.getElementById('plot').src = "";
         }
     }
 }
 
 function chooseTarget(column) {
-    let lda = new LDA(column);
-    lda.classify();
+    let mle = new MLE();
+    mle.analyze_by_column(column)
 };
 
 function showFileType(fileInput) {

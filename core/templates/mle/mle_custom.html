@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>MLE</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles/mle_home.css' %}" />
+    <link rel="icon" href="{% static 'assets/machine_learning_icon.png' %}" />
+    <script src="https://d3js.org/d3.v4.js"></script>
+  </head>
+  <body>
+    <form>
+      <input type="button" value="&#8592;" onclick="history.go(-1)" />
+    </form>
+    <h1>Maximum Likelihood Estimation (MLE)</h1>
+    <h2>
+      MLE is a method of estimating the parameters of a model using a set of
+      data.
+    </h2>
+    <p class="desc">
+      Upload the <b>.csv</b> or <b>.txt</b> file. The file must contain at least
+      <b>1 column</b> that contains numerical values <br />(the best option when
+      the average value of all the values of this column is equal to the median
+      of the values ​​of this column, in order to have a normal distribution).
+    </p>
+    <br />
+    <form
+      action=""
+      method="POST"
+      enctype="multipart/form-data"
+      class="form-style"
+    >
+      {% csrf_token %}
+      <label for="file1" class="upload-label"
+        ><b>Choose a File (.csv or .txt):</b></label
+      >
+      <input
+        type="file"
+        id="file1"
+        name="file"
+        accept=".csv,.txt"
+        onchange="showFileType(this)"
+        required
+      />
+      <button type="submit" class="upload" id="upload-file">Upload</button>
+      <br />
+      {% if messages %} {% for message in messages %}
+      <div>
+        <strong class="error-msg">{{message|safe}}</strong>
+      </div>
+      {% endfor %} {% endif %}
+    </form>
+    {% if column_headers %}
+    <div class="settings">
+      <form action="" class="form-style">
+        {% csrf_token %}
+        <p>
+          <b class="margin-left">Please select target column: </b>
+        </p>
+        {% for column_header in column_headers %}
+        <input
+          value="{{ column_header }}"
+          class="btn-style"
+          id="submit-type-btn"
+          type="button"
+          onClick='chooseTarget("{{ column_header }}")'
+        />
+        {% endfor %}
+      </form>
+    </div>
+    {% endif %}
+    <div class="settings">
+      <div class="wide-group">
+        <p id="mean"></p>
+      </div>
+      <div class="wide-group">
+        <p id="std"></p>
+      </div>
+    </div>
+    <p id="error" class="repr-err-msg"></p>
+    <img id="plot" src="" />
+
+    <script
+      type="text/javascript"
+      src="{% static 'js/mle/mle_custom.js' %}"
+    ></script>
+  </body>
+</html>

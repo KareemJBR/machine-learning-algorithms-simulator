@@ -1,8 +1,10 @@
 import json
+import logging
 
 import numpy as np
 import pandas as pd
 from django.contrib import messages
+from django.http import JsonResponse
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 from pandas.core.frame import DataFrame
@@ -76,53 +78,65 @@ def pca_custom(request):
                 {"column_headers": column_headers},
             )
     if request.method == "PUT":
-        output_dict = json.loads(request.body)
-        n_components = output_dict["n_components"]
-        print("n_components: ", type(n_components))
+        try:
+            output_dict = json.loads(request.body)
+            n_components = output_dict["n_components"]
+            print("n_components: ", type(n_components))
 
-        df: DataFrame = pd.read_csv(f"{TEMPORARY_FILE_DIR}/user_file.csv", sep=",")
-        features = list(df.columns)
+            df: DataFrame = pd.read_csv(f"{TEMPORARY_FILE_DIR}/user_file.csv", sep=",")
+            features = list(df.columns)
 
-        print("Features", features)
-        print("DF", df)
+            print("Features", features)
+            print("DF", df)
 
-        if n_components == 3 and len(features) <= 2:
-            messages.error(request, "File should contains at least 3 columns.")
-
-        X = df
-        pca = PCA(n_components=n_components)
-        components = pca.fit_transform(X)
-
-        if n_components == 2:
-            loadings = pca.components_.T * np.sqrt(pca.explained_variance_)
-
-            fig = px.scatter(components, x=0, y=1)
-
-            for i, feature in enumerate(features):
-                fig.add_shape(
-                    type="line", x0=0, y0=0, x1=loadings[i, 0], y1=loadings[i, 1]
+            if n_components == 3 and len(features) <= 2:
+                return JsonResponse(
+                    {
+                        "error": "Your dataset has only two columns, so only value 2 as a number of components is valid in this case."
+                    }
                 )
-                fig.add_annotation(
-                    x=loadings[i, 0],
-                    y=loadings[i, 1],
-                    ax=0,
-                    ay=0,
-                    xanchor="center",
-                    yanchor="bottom",
-                    text=feature,
-                )
-            fig.show()
 
-        if n_components == 3:
-            total_var = pca.explained_variance_ratio_.sum() * 100
-            fig = px.scatter_3d(
-                components,
-                x=0,
-                y=1,
-                z=2,
-                title=f"Total Explained Variance: {total_var:.2f}%",
-                labels={"0": "PC 1", "1": "PC 2", "2": "PC 3"},
+            X = df
+            pca = PCA(n_components=n_components)
+            components = pca.fit_transform(X)
+
+            if n_components == 2:
+                loadings = pca.components_.T * np.sqrt(pca.explained_variance_)
+
+                fig = px.scatter(components, x=0, y=1)
+
+                for i, feature in enumerate(features):
+                    fig.add_shape(
+                        type="line", x0=0, y0=0, x1=loadings[i, 0], y1=loadings[i, 1]
+                    )
+                    fig.add_annotation(
+                        x=loadings[i, 0],
+                        y=loadings[i, 1],
+                        ax=0,
+                        ay=0,
+                        xanchor="center",
+                        yanchor="bottom",
+                        text=feature,
+                    )
+                fig.show()
+
+            if n_components == 3:
+                total_var = pca.explained_variance_ratio_.sum() * 100
+                fig = px.scatter_3d(
+                    components,
+                    x=0,
+                    y=1,
+                    z=2,
+                    title=f"Total Explained Variance: {total_var:.2f}%",
+                    labels={"0": "PC 1", "1": "PC 2", "2": "PC 3"},
+                )
+                fig.show()
+        except Exception as e:
+            logging.getLogger("error_logger").error("Error: " + repr(e))
+            return JsonResponse(
+                {
+                    "error": "The dataset does not meet the requirements. Please upload a new one."
+                }
             )
-            fig.show()
 
     return render(request, "pca/pca_custom.html")

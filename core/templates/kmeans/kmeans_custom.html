@@ -11,24 +11,46 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-queue/3.0.3/d3-queue.js"></script>
   </head>
   <body>
+    <form>
+      <input type="button" value="&#8592;" onclick="history.go(-2)" />
+    </form>
     <h1>K-Means Clustering</h1>
     <h2>
       This interactive demo lets you explore the K-Means clustering algorithm
     </h2>
     <h2>that is used to solve the clustering problems.</h2>
+    <h2>You can add an unlimited number of points and up to 50 clusters.</h2>
     <div class="settings">
       <div class="group">
         <label for="k">K (Number of Clusters): <span id="k-pl">2</span></label>
         <input type="range" id="k" min="2" max="50" value="2" />
       </div>
       <div class="wide-group">
-        <button class="step">Run</button>
+        <button class="update-clusters">Update Clusters</button>
       </div>
       <div class="wide-group">
-        <button class="restart" disabled="true">Restart</button>
+        <label id="x-label" for="x_point"><span id="x_point-pl">0</span></label>
       </div>
       <div class="wide-group">
-        <button class="reset">Reset</button>
+        <input type="number" id="x_point" min="0" max="1000" value="0" />
+      </div>
+      <div class="wide-group">
+        <label id="y-label" for="y_point"><span id="y_point-pl">0</span></label>
+      </div>
+      <div class="wide-group">
+        <input type="number" id="y_point" min="0" max="1000" value="0" />
+      </div>
+      <div class="wide-group">
+        <button class="add-point">Add Point</button>
+      </div>
+      <div class="wide-group">
+        <button class="step">Run Model</button>
+      </div>
+      <div class="wide-group">
+        <button class="restart" disabled="true">Reset Clusters</button>
+      </div>
+      <div class="wide-group">
+        <button class="reset">Reset points</button>
       </div>
     </div>
     <br />

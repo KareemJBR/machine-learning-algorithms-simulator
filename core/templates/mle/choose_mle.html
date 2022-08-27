@@ -2,25 +2,25 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8" />
-    <title>Choose Naive Bayes Type</title>
+    <title>Choose MLE Model Type</title>
     {% load static %}
     <link rel="icon" href="{% static 'assets/machine_learning_icon.png' %}" />
     <link rel="stylesheet" href="{% static 'styles/choose_model.css' %}" />
   </head>
   <body>
     <form>
-      <input type="button" value="&#8592;" onclick="history.go(-2)" />
+      <input type="button" value="&#8592;" onclick="history.go(-1)" />
     </form>
-    <h1>Choose Naive Bayes Model Type</h1>
+    <h1>Choose MLE Model Type</h1>
     <div class="settings">
       <div class="wide-group">
         <button class="btn-style">
-          <a href="/naive_bayes" class="link">Use Default</a>
+          <a href="/mle" class="link">Use Default</a>
         </button>
       </div>
       <div class="wide-group">
         <button class="btn-style">
-          <a href="/custom_naive_bayes" class="link">Create Own</a>
+          <a href="/custom_mle" class="link">Create Own</a>
         </button>
       </div>
     </div>

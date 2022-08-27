@@ -5,7 +5,6 @@ body {
 
 h1 {
   width: 100%;
-  height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -74,5 +73,29 @@ h1 {
 
 h2, h3 {
   text-align: center;
-  margin: 0.2em 0;
+  margin: 0.1em 0;
+}
+
+#x_point, #y_point {
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.add-point {
+  background-color: white;
+  color: black;
+  border: 2px solid red;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.update-clusters {
+  background-color: white;
+  color: black;
+  border: 2px solid #4CAF50;
+  padding: 10px;
+  border-radius: 5px;
 }
