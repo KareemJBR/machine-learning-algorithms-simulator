@@ -93,3 +93,9 @@ table, th, td {
   text-align: center;
   font-size: 20px;
 }
+.repr-err-msg {
+  color: red;
+  text-align: center;
+  padding-left: 50px;
+  font-weight: 900;
+}

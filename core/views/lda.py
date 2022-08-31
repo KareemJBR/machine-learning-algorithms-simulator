@@ -74,7 +74,6 @@ def lda_custom(request):
                 n_components=2
             )  # The n_components key word gives us the projection to the n most discriminative directions in the dataset. We set this parameter to two to get a transformation in two dimensional space.
             data_projected = LDA.fit_transform(X_train, y_train)
-            print(data_projected.shape)
 
             # PLot the transformed data
             markers = ["s", "x", "o"]
@@ -103,9 +102,49 @@ def lda_custom(request):
             return JsonResponse({"image": image})
         except Exception as e:
             logging.getLogger("error_logger").error("Error: " + repr(e))
-            return JsonResponse(
-                {
-                    "error": "The column you selected as the target does not meet the requirements. Please select another column or upload a new dataset."
-                }
-            )
+            valid_columns = []
+            df = pd.read_csv(f"{TEMPORARY_FILE_DIR}/user_file.csv", sep=",")
+            features = list(df.columns)
+            X = df[features].values
+            for feature in features:
+                try:
+                    y = df[feature].values
+                    sc = StandardScaler()
+                    X = sc.fit_transform(X)
+                    X_train, X_test, y_train, y_test = train_test_split(
+                        X, y, test_size=0.2, random_state=0
+                    )
+                    LDA = LinearDiscriminantAnalysis(n_components=2)
+                    data_projected = LDA.fit_transform(X_train, y_train)
+                    markers = ["s", "x", "o"]
+                    colors = ["r", "g", "b"]
+                    fig = plt.figure(figsize=(10, 10))
+                    ax0 = fig.add_subplot(111)
+                    for l, m, c in zip(np.unique(y_train), markers, colors):
+                        ax0.scatter(
+                            data_projected[:, 0][y_train == l],
+                            data_projected[:, 1][y_train == l],
+                            c=c,
+                            marker=m,
+                        )
+                    valid_columns.append(feature)
+                except Exception as err:
+                    if type(err) == IndexError:
+                        valid_columns.append(feature)
+                    elif err == ValueError(
+                        "could not convert string to float: 'setosa'"
+                    ):
+                        valid_columns.append(feature)
+                    else:
+                        pass
+            if len(valid_columns) > 0:
+                return JsonResponse(
+                    {"error": f"Only columns {valid_columns} meet the requirements."}
+                )
+            else:
+                return JsonResponse(
+                    {
+                        "error": "No columns meet the requirements. Please upload a new dataset."
+                    }
+                )
     return render(request, "lda/lda_custom.html")

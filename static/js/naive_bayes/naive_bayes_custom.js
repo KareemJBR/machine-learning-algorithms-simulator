@@ -80,12 +80,23 @@ class NaiveBayes {
         })
             .then((resp) => { return resp.json() });
         const data = result;
-        this.accuracy = data["data"]["accuracy"];
-        this.actual_values = data["data"]["actual_values"];
-        this.predicted_values = data["data"]["predicted_values"];
-        this.drawActualValues();
-        this.drawPredictedValues();
-        this.displayAccuracy();
+        if (data["error"]) {
+            document.getElementById('error').textContent = `${data["error"]}`;
+            this.accuracy = 0;
+            this.actual_values = {};
+            this.predicted_values = {};
+            this.drawActualValues();
+            this.drawPredictedValues();
+            this.displayAccuracy();
+        } else {
+            document.getElementById('error').textContent = "";
+            this.accuracy = data["data"]["accuracy"];
+            this.actual_values = data["data"]["actual_values"];
+            this.predicted_values = data["data"]["predicted_values"];
+            this.drawActualValues();
+            this.drawPredictedValues();
+            this.displayAccuracy();
+        }
     };
 };
 

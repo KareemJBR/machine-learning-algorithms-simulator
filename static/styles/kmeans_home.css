@@ -99,3 +99,21 @@ h2, h3 {
   padding: 10px;
   border-radius: 5px;
 }
+.form-style {
+  display: flex;
+  justify-content: center;
+  padding-top: 1%;
+}
+.upload {
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+  padding: 5px;
+  border-radius: 5px;
+}
+.repr-err-msg {
+  color: red;
+  text-align: center;
+  padding-left: 50px;
+  font-weight: 900;
+}

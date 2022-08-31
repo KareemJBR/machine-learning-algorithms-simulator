@@ -164,12 +164,14 @@ class KMeans {
     constructor() {
         this.dots = [];
         this.userDots = [];
-        this.k = 2;
-        this.n = 2;
         this.groups = [];
         this.flag = false;
+        this.k = 1;
+        this.n = 0;
         this.x = 0;
         this.y = 0;
+        this.started = false;
+        this.firstRun = false;
 
         // event listeners
         this.onChangeX();
@@ -230,24 +232,25 @@ class KMeans {
             d.reset();
         });
     }
-    update_clusters() {
-
-    };
 
     reset() {
         this.groups = [];
         this.dots = [];
+        this.userDots = [];
         this.flag = false;
+        this.firstRun = false;
         this.prepare();
     }
 
     draw() {
         new CircleDrawer(this.dots).draw();
         const lineDrawer = new LineDrawer(this.dots);
-        if (this.dots[0].group) {
-            lineDrawer.draw();
-        } else {
-            lineDrawer.clear();
+        if (this.started) {
+            if (this.dots[0].group) {
+                lineDrawer.draw();
+            } else {
+                lineDrawer.clear();
+            }
         }
 
         new CenterDrawer(this.groups).draw();
@@ -306,17 +309,35 @@ class KMeans {
         });
     }
 
-    run() {
+    uploadPoints(points) {
+        points.forEach((point) => {
+            this.dots.push(new UserDot(point["x"], point["y"]));
+            this.userDots.push(new UserDot(point["x"], point["y"]));
+            new CircleDrawer(this.dots).draw();
+        })
+    }
 
+    run() {
         d3.select(".add-point").on("click", () => {
             this.dots.push(new UserDot(this.x, this.y));
+            this.userDots.push(new UserDot(this.x, this.y));
             new CircleDrawer(this.dots).draw();
         });
 
         d3.select(".step").on("click", () => {
-            this.restart();
-            this.step();
-            this.draw();
+            if (!this.firstRun) {
+                this.restart();
+                this.step();
+                this.draw();
+                this.firstRun = true;
+            } else {
+                if (this.userDots.length > 0) {
+                    this.restart();
+                    this.userDots = [];
+                }
+                this.step();
+                this.draw();
+            }
         });
 
         d3.select(".restart").on("click", () => {
@@ -326,16 +347,57 @@ class KMeans {
 
         d3.select(".reset").on("click", () => {
             this.reset();
+            if (this.dots.length === 0) {
+                const lineDrawer = new LineDrawer(this.dots);
+                lineDrawer.clear();
+            }
             this.draw();
         });
         d3.select(".update-clusters").on("click", () => {
             this.reset();
+            this.started = false;
+            const lineDrawer = new LineDrawer(this.dots);
+            lineDrawer.clear();
             this.draw();
+            this.started = true;
         });
 
         this.draw();
+        this.started = true;
     }
 }
 
 let kmeans = new KMeans();
 kmeans.run();
+
+function showFileType(fileInput) {
+    const files = fileInput.files;
+    for (const i = 0; i < files.length; i++) {
+        const name = files[i].name;
+        const type = files[i].type;
+        if (type !== "text/csv" && type !== "text/plain") {
+            document.getElementById('upload-file').disabled = true;
+            alert("Invalid file format! Please upload the file of .csv or .txt format.");
+        } else {
+            document.getElementById('upload-file').disabled = false;
+        }
+    }
+}
+
+async function getPoints(e, form) {
+    e.preventDefault();
+    const formData = new FormData(form);
+    await fetch(form.action, {
+        method: "POST",
+        body: formData,
+    })
+        .then((response) => response.json())
+        .then((data) => {
+            if (data["points"]) {
+                document.getElementById('error').textContent = "";
+                kmeans.uploadPoints(data["points"])
+            } else {
+                document.getElementById('error').textContent = `${data["error"]}`;
+            }
+        })
+};

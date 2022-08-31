@@ -15,15 +15,40 @@
       <input type="button" value="&#8592;" onclick="history.go(-2)" />
     </form>
     <h1>K-Means Clustering</h1>
-    <h2>
+    <h3>
       This interactive demo lets you explore the K-Means clustering algorithm
-    </h2>
-    <h2>that is used to solve the clustering problems.</h2>
-    <h2>You can add an unlimited number of points and up to 50 clusters.</h2>
+      that is used to solve the clustering problems.
+    </h3>
+    <h3>
+      You can add an unlimited number of points and up to 50 clusters or upload
+      the <b>.csv</b> or <b>.txt</b> file with coordinates of points.
+    </h3>
+    <form
+      action=""
+      method="POST"
+      enctype="multipart/form-data"
+      class="form-style"
+      onsubmit="getPoints(event, this)"
+    >
+      {% csrf_token %}
+      <label for="file1" class="upload-label"
+        ><b>Choose a File (.csv or .txt):</b></label
+      >
+      <input
+        type="file"
+        id="file1"
+        name="file"
+        accept=".csv,.txt"
+        onchange="showFileType(this)"
+        required
+      />
+      <button type="submit" class="upload" id="upload-file">Upload</button>
+    </form>
+
     <div class="settings">
       <div class="group">
-        <label for="k">K (Number of Clusters): <span id="k-pl">2</span></label>
-        <input type="range" id="k" min="2" max="50" value="2" />
+        <label for="k">K (Number of Clusters): <span id="k-pl">1</span></label>
+        <input type="range" id="k" min="1" max="50" value="1" />
       </div>
       <div class="wide-group">
         <button class="update-clusters">Update Clusters</button>
@@ -54,6 +79,7 @@
       </div>
     </div>
     <br />
+    <p id="error" class="repr-err-msg"></p>
     <svg class="kmeans"></svg>
 
     <script
