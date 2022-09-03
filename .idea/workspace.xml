@@ -4,7 +4,16 @@
     <list default="true" id="f9775237-8162-4f92-aa4f-70e92417391c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/core/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/templates/dfs_home.html" beforeDir="false" afterPath="$PROJECT_DIR$/core/templates/dfs_home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/templates/kmeans/choose_kmeans.html" beforeDir="false" afterPath="$PROJECT_DIR$/core/templates/kmeans/choose_kmeans.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/templates/knn.html" beforeDir="false" afterPath="$PROJECT_DIR$/core/templates/knn.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/templates/knn_home.html" beforeDir="false" afterPath="$PROJECT_DIR$/core/templates/knn_home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/templates/lda/choose_lda.html" beforeDir="false" afterPath="$PROJECT_DIR$/core/templates/lda/choose_lda.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/templates/mle/choose_mle.html" beforeDir="false" afterPath="$PROJECT_DIR$/core/templates/mle/choose_mle.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/templates/naive_bayes/choose_naive_bayes.html" beforeDir="false" afterPath="$PROJECT_DIR$/core/templates/naive_bayes/choose_naive_bayes.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/templates/pca/choose_pca.html" beforeDir="false" afterPath="$PROJECT_DIR$/core/templates/pca/choose_pca.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/templates/svm_home.html" beforeDir="false" afterPath="$PROJECT_DIR$/core/templates/svm_home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/temporary_file_folder/user_file.csv" beforeDir="false" afterPath="$PROJECT_DIR$/temporary_file_folder/user_file.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,11 +62,11 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "WebServerToolWindowFactoryState": "false"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="views" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="machine-learning-algorithms-simulator" />
@@ -153,6 +162,8 @@
       <workItem from="1652431679374" duration="262000" />
       <workItem from="1652566189440" duration="61000" />
       <workItem from="1661969994896" duration="75000" />
+      <workItem from="1662196899275" duration="128000" />
+      <workItem from="1662197093381" duration="4291000" />
     </task>
     <servers />
   </component>
