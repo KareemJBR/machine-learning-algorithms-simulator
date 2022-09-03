@@ -27,7 +27,7 @@ h2, h3, h4 {
 }
 
 .col-xs-4 {
-  width: 0px important!;
+  width: 0px !important;
 }
 
 
