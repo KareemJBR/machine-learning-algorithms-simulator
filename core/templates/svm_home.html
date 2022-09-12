@@ -9,37 +9,13 @@
     <script src="https://d3js.org/d3.v4.js"></script>
   </head>
   <body>
-    <h1>Support Vector Machine (SVM)</h1>
-
-    <p>
-      In machine learning, support-vector machines (SVMs, also support-vector networks) are supervised learning
-      models with associated learning algorithms that analyze data for classification and regression analysis.
-    </p>
-
-    <p>
-      Given a set of training examples, each marked as belonging to one or the other of two categories, an
-      SVM training algorithm builds a model that assigns new examples to one category or the other, making it a
-      non-probabilistic binary linear classifier (although methods such as Platt scaling exist to use SVM in a
-      probabilistic classification setting).
-    </p>
-
-    <p>
-      An SVM model is a representation of the examples as points in space,
-      mapped so that the examples of the separate categories are divided by a clear gap that is as wide as possible.
-      New examples are then mapped into that same space and predicted to belong to a category based on which side
-      of the gap they fall on.
-    </p>
-
-    <p>
-        For more information, please visit <a href="https://en.wikipedia.org/wiki/Support-vector_machine">Wikipedia</a>.
-    </p>
-
-    <br>
+    <h1>Support Vectors Machine (SVM)</h1>
     <h3>
-      The following interactive demo lets you explore the SVM algorithm and how it works:
+      This interactive demo lets you explore the SVM algorithm that is used for
+      Classification problems.
     </h3>
     <h3>
-      The width of the margin changes based on the value of C hyperparameter.
+      The width of the margin changes based on the value of C hyper parameter.
     </h3>
     <div class="settings">
       <div class="wide-group">
@@ -68,6 +44,29 @@
       <p class="responseData">{{data}}</p>
     </form>
     <div class="svm"></div>
+
+    <p>
+      In machine learning, support-vector machines (SVMs, also support-vector networks) are supervised learning
+      models with associated learning algorithms that analyze data for classification and regression analysis.
+    </p>
+
+    <p>
+      Given a set of training examples, each marked as belonging to one or the other of two categories, an
+      SVM training algorithm builds a model that assigns new examples to one category or the other, making it a
+      non-probabilistic binary linear classifier (although methods such as Platt scaling exist to use SVM in a
+      probabilistic classification setting).
+    </p>
+
+    <p>
+      An SVM model is a representation of the examples as points in space,
+      mapped so that the examples of the separate categories are divided by a clear gap that is as wide as possible.
+      New examples are then mapped into that same space and predicted to belong to a category based on which side
+      of the gap they fall on.
+    </p>
+
+    <p>
+        For more information, please visit <a href="https://en.wikipedia.org/wiki/Support-vector_machine">Wikipedia</a>.
+    </p>
 
     <script type="text/javascript" src="{% static 'js/svm_home.js' %}"></script>
   </body>
