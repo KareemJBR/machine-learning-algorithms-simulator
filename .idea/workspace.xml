@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f9775237-8162-4f92-aa4f-70e92417391c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/templates/svm_home.html" beforeDir="false" afterPath="$PROJECT_DIR$/core/templates/svm_home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/styles/svm_home.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/styles/svm_home.css" afterDir="false" />
-    </list>
+    <list default="true" id="f9775237-8162-4f92-aa4f-70e92417391c" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -159,7 +154,7 @@
       <workItem from="1662196899275" duration="128000" />
       <workItem from="1662197093381" duration="8094000" />
       <workItem from="1662327682963" duration="2000" />
-      <workItem from="1663006700007" duration="1177000" />
+      <workItem from="1663006700007" duration="1777000" />
     </task>
     <servers />
   </component>
