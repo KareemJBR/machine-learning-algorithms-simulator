@@ -40,12 +40,9 @@ We are building a website that has the implementation of 8 different algorithms,
    - on Linux: `source .venv/bin/activate`
    - on Windows: `source .venv/Scripts/activate`
 
+
 3. Install the project dependencies: `pip install -r requirements.txt`
 
-4. Create `.env` file in the `setup` folder with such environment variables:
+4. Start a Django application `python manage.py runserver`
 
-   `SECRET_KEY=<some_secret_value>`
-
-5. Start a Django application `python manage.py runserver`
-
-6. Visit http://127.0.0.1:8000/
+5. Visit http://127.0.0.1:8000/
