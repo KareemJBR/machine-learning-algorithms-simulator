@@ -19,7 +19,7 @@ Start the server:
 
 	- The command `./run_win.sh` for Windows environment.
 
-4. In the web browser, visit `https://127.0.0.1:8000` or `https://localhost:8000`.
+4. In the web browser, visit `http://127.0.0.1:8000` or `http://localhost:8000`.
 
 
 In order to shut down the server, use the shortcut Ctrl + C in the terminal\bash used to start the server.
