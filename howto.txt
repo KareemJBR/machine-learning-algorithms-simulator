@@ -11,6 +11,8 @@ Start the server:
 
 2. In Linux environment, switch to root using the command: `sudo su`.
 
+3. In Linux environment, you might need to change the permission for the shell file for the first time running the server, do it using the command: `chmod 711 run_lin.sh`.
+
 3. Run the run-shell file using:
 
 	- The command `./run_lin.sh` for Linux environment.
