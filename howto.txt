@@ -1,3 +1,10 @@
+Requirements:
+
+1. Python 3.10
+
+2. Pip for Python packages management.
+
+
 Start the server:
 
 1. Open terminal in the project directory.
